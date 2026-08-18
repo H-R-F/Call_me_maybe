@@ -1,0 +1,907 @@
+{
+  "nodes": [
+    {
+      "id": "call-me-maybe",
+      "type": "concept",
+      "label": "Call Me Maybe - 42 Project",
+      "source_location": "README.md:3",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "function-calling",
+      "type": "concept",
+      "label": "Function Calling in LLMs",
+      "source_location": "en.subject.pdf:III.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "constrained-decoding",
+      "type": "concept",
+      "label": "Constrained Decoding",
+      "source_location": "en.subject.pdf:V.3.3",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "token-trie-constrained-decoding",
+      "type": "concept",
+      "label": "Token-trie Constrained Decoding",
+      "source_location": "README.md:41",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "deterministic-parameter-extraction",
+      "type": "concept",
+      "label": "Deterministic Parameter Extraction",
+      "source_location": "README.md:42",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "llm-generation-pipeline",
+      "type": "concept",
+      "label": "LLM Generation Pipeline",
+      "source_location": "en.subject.pdf:V.3.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "function-selection",
+      "type": "concept",
+      "label": "Function Selection via LLM",
+      "source_location": "README.md:39",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "parameter-extraction",
+      "type": "concept",
+      "label": "Parameter Extraction",
+      "source_location": "README.md:42",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "output-formatting",
+      "type": "concept",
+      "label": "Output Formatting",
+      "source_location": "README.md:45",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "json-schema-validation",
+      "type": "concept",
+      "label": "JSON Schema Validation",
+      "source_location": "en.subject.pdf:V.4.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "small-language-model",
+      "type": "concept",
+      "label": "Small Language Model (0.6B parameters)",
+      "source_location": "en.subject.pdf:III.3",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "tokenization",
+      "type": "concept",
+      "label": "Tokenization",
+      "source_location": "en.subject.pdf:V.3.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "logits",
+      "type": "concept",
+      "label": "Logits (probability scores)",
+      "source_location": "en.subject.pdf:V.3.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "natural-language-to-function-call",
+      "type": "concept",
+      "label": "Natural Language to Function Call Translation",
+      "source_location": "en.subject.pdf:III.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "structured-output",
+      "type": "concept",
+      "label": "Structured Output Generation",
+      "source_location": "en.subject.pdf:III.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "42-curriculum",
+      "type": "concept",
+      "label": "42 Curriculum",
+      "source_location": "README.md:1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "uv-package-manager",
+      "type": "tool",
+      "label": "uv package manager",
+      "source_location": "README.md:13",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pydantic",
+      "type": "framework",
+      "label": "Pydantic validation framework",
+      "source_location": "README.md:30",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "numpy",
+      "type": "framework",
+      "label": "NumPy",
+      "source_location": "README.md:31",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "qwen-qwen3-0-6b",
+      "type": "module",
+      "label": "Qwen/Qwen3-0.6B model",
+      "source_location": "en.subject.pdf:IV.3.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "small-llm-model",
+      "type": "class",
+      "label": "Small_LLM_Model SDK class",
+      "source_location": "llm_sdk/llm_sdk/__init__.py:16",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "llm-sdk-package",
+      "type": "module",
+      "label": "llm_sdk package",
+      "source_location": "llm_sdk/llm_sdk/__init__.py:1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "readme-file",
+      "type": "file",
+      "label": "README.md",
+      "source_location": "README.md",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "subject-pdf",
+      "type": "file",
+      "label": "en.subject.pdf",
+      "source_location": "me/en.subject.pdf",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pipeline-py",
+      "type": "file",
+      "label": "src/pipeline.py",
+      "source_location": "src/pipeline.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "decoder-py",
+      "type": "file",
+      "label": "src/decoder.py",
+      "source_location": "src/decoder.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "schema-py",
+      "type": "file",
+      "label": "src/schema.py",
+      "source_location": "src/schema.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "cli-py",
+      "type": "file",
+      "label": "src/cli.py",
+      "source_location": "src/cli.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "io-utils-py",
+      "type": "file",
+      "label": "src/io_utils.py",
+      "source_location": "src/io_utils.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "main-py",
+      "type": "file",
+      "label": "src/__main__.py",
+      "source_location": "src/__main__.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pyproject-toml",
+      "type": "file",
+      "label": "pyproject.toml",
+      "source_location": "pyproject.toml",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "makefile",
+      "type": "file",
+      "label": "Makefile",
+      "source_location": "Makefile",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "llm-sdk-init-py",
+      "type": "file",
+      "label": "llm_sdk/llm_sdk/__init__.py",
+      "source_location": "llm_sdk/llm_sdk/__init__.py",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "run-pipeline",
+      "type": "function",
+      "label": "run_pipeline()",
+      "source_location": "src/pipeline.py:14",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "decode-function",
+      "type": "function",
+      "label": "decode()",
+      "source_location": "src/decoder.py:234",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "select-function-name",
+      "type": "function",
+      "label": "select_function_name()",
+      "source_location": "src/decoder.py:71",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "generate-parameters",
+      "type": "function",
+      "label": "_generate_parameters()",
+      "source_location": "src/decoder.py:115",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "main-cli",
+      "type": "function",
+      "label": "main() CLI entry point",
+      "source_location": "src/cli.py:33",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "load-function-definitions",
+      "type": "function",
+      "label": "load_function_definitions()",
+      "source_location": "src/io_utils.py:37",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "load-prompts",
+      "type": "function",
+      "label": "load_prompts()",
+      "source_location": "src/io_utils.py:47",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "write-output",
+      "type": "function",
+      "label": "write_output()",
+      "source_location": "src/io_utils.py:57",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "trienode-dataclass",
+      "type": "class",
+      "label": "TrieNode dataclass",
+      "source_location": "src/decoder.py:16",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "decodedcall-typeddict",
+      "type": "class",
+      "label": "DecodedCall TypedDict",
+      "source_location": "src/decoder.py:23",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "functiondefinition-model",
+      "type": "class",
+      "label": "FunctionDefinition Pydantic model",
+      "source_location": "src/schema.py:26",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "parameterspec-model",
+      "type": "class",
+      "label": "ParameterSpec Pydantic model",
+      "source_location": "src/schema.py:20",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "promptitem-model",
+      "type": "class",
+      "label": "PromptItem Pydantic model",
+      "source_location": "src/schema.py:35",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "outputitem-model",
+      "type": "class",
+      "label": "OutputItem Pydantic model",
+      "source_location": "src/schema.py:41",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "ldevelle",
+      "type": "person",
+      "label": "ldevelle (collaborator)",
+      "source_location": "en.subject.pdf:Summary",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pcamaren",
+      "type": "person",
+      "label": "pcamaren (collaborator)",
+      "source_location": "en.subject.pdf:Summary",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "crfernan",
+      "type": "person",
+      "label": "crfernan (collaborator)",
+      "source_location": "en.subject.pdf:Summary",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "login1",
+      "type": "person",
+      "label": "<login1> (student author)",
+      "source_location": "README.md:1",
+      "confidence": "AMBIGUOUS"
+    },
+    {
+      "id": "flake8",
+      "type": "tool",
+      "label": "Flake8 linter",
+      "source_location": "en.subject.pdf:IV.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "mypy",
+      "type": "tool",
+      "label": "Mypy type checker",
+      "source_location": "en.subject.pdf:IV.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pytest",
+      "type": "tool",
+      "label": "Pytest testing framework",
+      "source_location": "en.subject.pdf:IV.3",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "input-files",
+      "type": "file",
+      "label": "data/input/ directory (test inputs)",
+      "source_location": "en.subject.pdf:V.2",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "output-file",
+      "type": "file",
+      "label": "data/output/function_calling_results.json",
+      "source_location": "en.subject.pdf:V.4",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "token-trie",
+      "type": "concept",
+      "label": "Token-ID Trie for function name constrained decoding",
+      "source_location": "src/decoder.py:55",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pydantic-validation",
+      "type": "concept",
+      "label": "Pydantic model validation",
+      "source_location": "src/io_utils.py:16",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "type-hints",
+      "type": "concept",
+      "label": "Type hints and static type checking",
+      "source_location": "en.subject.pdf:IV.1",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "error-handling",
+      "type": "concept",
+      "label": "Graceful error handling",
+      "source_location": "en.subject.pdf:IV.1",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "call-me-maybe",
+      "target": "42-curriculum",
+      "relationship": "part_of",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "call-me-maybe",
+      "target": "function-calling",
+      "relationship": "implements",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "call-me-maybe",
+      "target": "constrained-decoding",
+      "relationship": "uses",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "call-me-maybe",
+      "target": "qwen-qwen3-0-6b",
+      "relationship": "uses_model",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "function-calling",
+      "target": "natural-language-to-function-call",
+      "relationship": "enables",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "function-calling",
+      "target": "structured-output",
+      "relationship": "produces",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "constrained-decoding",
+      "target": "token-trie-constrained-decoding",
+      "relationship": "implemented_as",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "constrained-decoding",
+      "target": "small-language-model",
+      "relationship": "compensates_for",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "llm-generation-pipeline",
+      "target": "tokenization",
+      "relationship": "includes_step",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "llm-generation-pipeline",
+      "target": "logits",
+      "relationship": "includes_step",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "llm-generation-pipeline",
+      "target": "function-selection",
+      "relationship": "includes_step",
+      "confidence": "INFERRED"
+    },
+    {
+      "source": "llm-generation-pipeline",
+      "target": "parameter-extraction",
+      "relationship": "includes_step",
+      "confidence": "INFERRED"
+    },
+    {
+      "source": "llm-generation-pipeline",
+      "target": "output-formatting",
+      "relationship": "includes_step",
+      "confidence": "INFERRED"
+    },
+    {
+      "source": "small-llm-model",
+      "target": "llm-sdk-package",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "small-llm-model",
+      "target": "qwen-qwen3-0-6b",
+      "relationship": "wraps_model",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "run-pipeline",
+      "target": "pipeline-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "run-pipeline",
+      "target": "small-llm-model",
+      "relationship": "instantiates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "run-pipeline",
+      "target": "decode-function",
+      "relationship": "calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "decode-function",
+      "target": "select-function-name",
+      "relationship": "calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "decode-function",
+      "target": "generate-parameters",
+      "relationship": "calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "select-function-name",
+      "target": "token-trie",
+      "relationship": "builds_and_uses",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "select-function-name",
+      "target": "function-selection",
+      "relationship": "implements",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "generate-parameters",
+      "target": "parameter-extraction",
+      "relationship": "implements",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "generate-parameters",
+      "target": "deterministic-parameter-extraction",
+      "relationship": "uses",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "main-cli",
+      "target": "cli-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "main-cli",
+      "target": "run-pipeline",
+      "relationship": "calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "load-function-definitions",
+      "target": "io-utils-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "load-function-definitions",
+      "target": "functiondefinition-model",
+      "relationship": "validates_with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "load-prompts",
+      "target": "io-utils-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "load-prompts",
+      "target": "promptitem-model",
+      "relationship": "validates_with",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "write-output",
+      "target": "io-utils-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "write-output",
+      "target": "outputitem-model",
+      "relationship": "serializes",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "functiondefinition-model",
+      "target": "parameterspec-model",
+      "relationship": "references",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "functiondefinition-model",
+      "target": "schema-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "outputitem-model",
+      "target": "schema-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "promptitem-model",
+      "target": "schema-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "parameterspec-model",
+      "target": "schema-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "trienode-dataclass",
+      "target": "decoder-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "trienode-dataclass",
+      "target": "token-trie",
+      "relationship": "is_building_block",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "decodedcall-typeddict",
+      "target": "decoder-py",
+      "relationship": "defined_in",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "uv-package-manager",
+      "target": "call-me-maybe",
+      "relationship": "manages_dependencies",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "pydantic",
+      "target": "call-me-maybe",
+      "relationship": "dependency_of",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "numpy",
+      "target": "call-me-maybe",
+      "relationship": "dependency_of",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "small-language-model",
+      "target": "qwen-qwen3-0-6b",
+      "relationship": "refers_to",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "flake8",
+      "target": "call-me-maybe",
+      "relationship": "lints",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "mypy",
+      "target": "call-me-maybe",
+      "relationship": "type_checks",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "pydantic-validation",
+      "target": "pydantic",
+      "relationship": "uses",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "call-me-maybe",
+      "target": "login1",
+      "relationship": "authored_by",
+      "confidence": "AMBIGUOUS"
+    },
+    {
+      "source": "subject-pdf",
+      "target": "ldevelle",
+      "relationship": "authored_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "subject-pdf",
+      "target": "pcamaren",
+      "relationship": "authored_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "subject-pdf",
+      "target": "crfernan",
+      "relationship": "authored_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "readme-file",
+      "target": "call-me-maybe",
+      "relationship": "documents",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "subject-pdf",
+      "target": "call-me-maybe",
+      "relationship": "specifies",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "json-schema-validation",
+      "target": "output-file",
+      "relationship": "validates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "main-py",
+      "target": "main-cli",
+      "relationship": "calls",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "makefile",
+      "target": "call-me-maybe",
+      "relationship": "automates",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "pyproject-toml",
+      "target": "call-me-maybe",
+      "relationship": "configures",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "input-files",
+      "target": "run-pipeline",
+      "relationship": "consumed_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "run-pipeline",
+      "target": "output-file",
+      "relationship": "produces",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "token-trie",
+      "target": "constrained-decoding",
+      "relationship": "enables",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "llm-sdk-package",
+      "target": "call-me-maybe",
+      "relationship": "dependency_of",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "type-hints",
+      "target": "call-me-maybe",
+      "relationship": "required_by",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "error-handling",
+      "target": "call-me-maybe",
+      "relationship": "required_by",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "project-architecture",
+      "members": [
+        "pipeline-py",
+        "decoder-py",
+        "schema-py",
+        "cli-py",
+        "io-utils-py",
+        "main-py"
+      ],
+      "label": "Core source modules in src/ package",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "pipeline-flow",
+      "members": [
+        "run-pipeline",
+        "load-function-definitions",
+        "load-prompts",
+        "decode-function",
+        "write-output"
+      ],
+      "label": "End-to-end pipeline: load -> decode -> write",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "decoding-process",
+      "members": [
+        "select-function-name",
+        "generate-parameters",
+        "decode-function",
+        "trienode-dataclass",
+        "decodedcall-typeddict"
+      ],
+      "label": "Decoding subsystem: function selection + parameter extraction",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "data-models",
+      "members": [
+        "functiondefinition-model",
+        "parameterspec-model",
+        "promptitem-model",
+        "outputitem-model"
+      ],
+      "label": "Pydantic data models for input/output schema",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "subject-authors",
+      "members": [
+        "ldevelle",
+        "pcamaren",
+        "crfernan"
+      ],
+      "label": "Original subject authors/collaborators",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "sanctioned-libraries",
+      "members": [
+        "pydantic",
+        "numpy",
+        "json"
+      ],
+      "label": "Approved Python packages for the project",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "quality-toolchain",
+      "members": [
+        "flake8",
+        "mypy",
+        "pytest"
+      ],
+      "label": "Quality assurance tools: linting, type checking, testing",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "llm-sdk-interface",
+      "members": [
+        "small-llm-model",
+        "llm-sdk-package",
+        "qwen-qwen3-0-6b"
+      ],
+      "label": "LLM SDK wrapping Qwen3-0.6B for model inference",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "constrained-decoding-approach",
+      "members": [
+        "constrained-decoding",
+        "token-trie-constrained-decoding",
+        "deterministic-parameter-extraction",
+        "function-selection"
+      ],
+      "label": "Hybrid approach: LLM-based function selection + deterministic parameter extraction",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

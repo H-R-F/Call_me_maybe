@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "7e84183a012d43d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "7978a6c78ff5bf8a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4e0e9d755ce8ff9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "excalidraw/llm-sdk-init-py.excalidraw",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "llm-sdk-init-py"
+            }
+          },
+          {
+            "id": "25b7acf27c17d534",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "excalidraw/generate_function.excalidraw"
+              },
+              "icon": "excalidraw-icon",
+              "title": "generate_function"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "23a2c9d77ee217b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "a05debf8d8665ab7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de67e4e4fbfb3e69",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "973ab6076e661a78",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6a3fffe6585fbd0a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 479.5
+  },
+  "right": {
+    "id": "86bcc3e31b24f9f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "003069b9b55fbf00",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "729836b0899622be",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "e62818ed88194611",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "0d99b116ff87964a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "cfe4683eedf70227",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ce5d72149484d1dd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "25b7acf27c17d534",
+  "lastOpenFiles": [
+    "excalidraw/io-utils-py.excalidraw",
+    "excalidraw/generate_function.excalidraw",
+    "excalidraw/llm-sdk-init-py.excalidraw",
+    "excalidraw/Makefile.excalidraw",
+    "excalidraw/decoder_plan.excalidraw",
+    "excalidraw/schema-py.excalidraw",
+    "excalidraw/Unconfirmed 60372.crdownload",
+    "excalidraw/Pipeline Flow.excalidraw",
+    "excalidraw/Full Journey.excalidraw",
+    "excalidraw/constrained_decoding_excalidraw.excalidraw",
+    "excalidraw/decoder-py.excalidraw",
+    "decoder_explanation.md",
+    "ssssssss.md",
+    "Untitled.md",
+    "Excalidraw/Drawing 2026-06-16 11.01.27.excalidraw.md",
+    "FunctionDefinition_2.md",
+    "Any.md",
+    "Untitled 1.canvas",
+    "Pipeline Flow.md",
+    "Excalidraw/Drawing 2026-06-14 12.02.42.excalidraw.md",
+    "Excalidraw/Drawing 2026-06-14 12.03.46.excalidraw.md",
+    "Pipeline Sequence.md",
+    "__init__.py.md",
+    "ts/Welcome.md",
+    "Untitled.canvas",
+    "Call Me Maybe - 42 Project.md",
+    "run_pipeline().md",
+    "Call_me_maybe/Welcome.md",
+    "42 Curriculum.md",
+    "_build_token_trie().md",
+    "_build_parser().md",
+    "__init__.py_1.md"
+  ]
+}

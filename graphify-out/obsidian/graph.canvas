@@ -1,0 +1,2539 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Data Models & Schema",
+      "x": 0,
+      "y": 0,
+      "width": 1320,
+      "height": 1320,
+      "color": "1"
+    },
+    {
+      "id": "n_src_io_utils_py_any",
+      "type": "file",
+      "file": "Any.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_pipeline_py_any",
+      "type": "file",
+      "file": "Any_1.md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_basemodel",
+      "type": "file",
+      "file": "BaseModel.md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_rationale_21",
+      "type": "file",
+      "file": "Describes a single parameter or return type..md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_py_functiondefinition",
+      "type": "file",
+      "file": "FunctionDefinition_1.md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_functiondefinition",
+      "type": "file",
+      "file": "FunctionDefinition_2.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_1",
+      "type": "file",
+      "file": "IO helpers for JSON files..md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_25",
+      "type": "file",
+      "file": "Load JSON content from a file and return raw data..md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_38",
+      "type": "file",
+      "file": "Load and validate function definitions from JSON..md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_48",
+      "type": "file",
+      "file": "Load and validate prompt items from JSON..md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_modelt",
+      "type": "file",
+      "file": "ModelT.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_outputitem",
+      "type": "file",
+      "file": "OutputItem.md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_outputitem",
+      "type": "file",
+      "file": "OutputItem_1.md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_parameterspec",
+      "type": "file",
+      "file": "ParameterSpec.md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_promptitem",
+      "type": "file",
+      "file": "PromptItem.md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_promptitem",
+      "type": "file",
+      "file": "PromptItem_1.md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pydantic-validation",
+      "type": "file",
+      "file": "Pydantic model validation.md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_rationale_1",
+      "type": "file",
+      "file": "Pydantic schemas for inputs and outputs..md",
+      "x": 420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pydantic",
+      "type": "file",
+      "file": "Pydantic validation framework.md",
+      "x": 20,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_rationale_27",
+      "type": "file",
+      "file": "Represents a function definition from the input schema..md",
+      "x": 220,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_rationale_42",
+      "type": "file",
+      "file": "Represents one output entry in the results file..md",
+      "x": 420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema_rationale_36",
+      "type": "file",
+      "file": "Represents one prompt entry from the input file..md",
+      "x": 20,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_pipeline_rationale_20",
+      "type": "file",
+      "file": "Run the end-to-end generation pipeline..md",
+      "x": 220,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_17",
+      "type": "file",
+      "file": "Validate arbitrary data into a Pydantic model..md",
+      "x": 420,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_rationale_58",
+      "type": "file",
+      "file": "Write validated output items to a JSON file..md",
+      "x": 20,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_validate_model",
+      "type": "file",
+      "file": "_validate_model().md",
+      "x": 220,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils",
+      "type": "file",
+      "file": "io_utils.py.md",
+      "x": 420,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_load_function_definitions",
+      "type": "file",
+      "file": "load_function_definitions().md",
+      "x": 20,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_load_json_file",
+      "type": "file",
+      "file": "load_json_file().md",
+      "x": 220,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_load_prompts",
+      "type": "file",
+      "file": "load_prompts().md",
+      "x": 420,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_pipeline",
+      "type": "file",
+      "file": "pipeline.py.md",
+      "x": 20,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_pipeline_run_pipeline",
+      "type": "file",
+      "file": "run_pipeline().md",
+      "x": 220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_schema",
+      "type": "file",
+      "file": "schema.py.md",
+      "x": 420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_io_utils_write_output",
+      "type": "file",
+      "file": "write_output().md",
+      "x": 20,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Project Overview & Constraints",
+      "x": 1400,
+      "y": 0,
+      "width": 1100,
+      "height": 1020,
+      "color": "2"
+    },
+    {
+      "id": "n_42-curriculum",
+      "type": "file",
+      "file": "42 Curriculum.md",
+      "x": 1420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_login1",
+      "type": "file",
+      "file": "login1 (student author).md",
+      "x": 1620,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_call-me-maybe",
+      "type": "file",
+      "file": "Call Me Maybe - 42 Project.md",
+      "x": 1820,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_constrained-decoding",
+      "type": "file",
+      "file": "Constrained Decoding.md",
+      "x": 1420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_flake8",
+      "type": "file",
+      "file": "Flake8 linter.md",
+      "x": 1620,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_function-calling",
+      "type": "file",
+      "file": "Function Calling in LLMs.md",
+      "x": 1820,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_error-handling",
+      "type": "file",
+      "file": "Graceful error handling.md",
+      "x": 1420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_makefile",
+      "type": "file",
+      "file": "Makefile.md",
+      "x": 1620,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mypy",
+      "type": "file",
+      "file": "Mypy type checker.md",
+      "x": 1820,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_natural-language-to-function-call",
+      "type": "file",
+      "file": "Natural Language to Function Call Translation.md",
+      "x": 1420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_numpy",
+      "type": "file",
+      "file": "NumPy.md",
+      "x": 1620,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_qwen-qwen3-0-6b",
+      "type": "file",
+      "file": "QwenQwen3-0.6B model.md",
+      "x": 1820,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_readme-file",
+      "type": "file",
+      "file": "README.md",
+      "x": 1420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_small-language-model",
+      "type": "file",
+      "file": "Small Language Model (0.6B parameters).md",
+      "x": 1620,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_small-llm-model",
+      "type": "file",
+      "file": "Small_LLM_Model SDK class.md",
+      "x": 1820,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_structured-output",
+      "type": "file",
+      "file": "Structured Output Generation.md",
+      "x": 1420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_token-trie-constrained-decoding",
+      "type": "file",
+      "file": "Token-trie Constrained Decoding.md",
+      "x": 1620,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_type-hints",
+      "type": "file",
+      "file": "Type hints and static type checking.md",
+      "x": 1820,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_crfernan",
+      "type": "file",
+      "file": "crfernan (collaborator).md",
+      "x": 1420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_subject-pdf",
+      "type": "file",
+      "file": "en.subject.pdf.md",
+      "x": 1620,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ldevelle",
+      "type": "file",
+      "file": "ldevelle (collaborator).md",
+      "x": 1820,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm-sdk-package",
+      "type": "file",
+      "file": "llm_sdk package.md",
+      "x": 1420,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pcamaren",
+      "type": "file",
+      "file": "pcamaren (collaborator).md",
+      "x": 1620,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pyproject-toml",
+      "type": "file",
+      "file": "pyproject.toml.md",
+      "x": 1820,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_uv-package-manager",
+      "type": "file",
+      "file": "uv package manager.md",
+      "x": 1420,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "CLI & Decoding Pipeline",
+      "x": 2580,
+      "y": 0,
+      "width": 1100,
+      "height": 920,
+      "color": "3"
+    },
+    {
+      "id": "n_decodedcall-typeddict",
+      "type": "file",
+      "file": "DecodedCall TypedDict.md",
+      "x": 2600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_deterministic-parameter-extraction",
+      "type": "file",
+      "file": "Deterministic Parameter Extraction.md",
+      "x": 2800,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_function-selection",
+      "type": "file",
+      "file": "Function Selection via LLM.md",
+      "x": 3000,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_json-schema-validation",
+      "type": "file",
+      "file": "JSON Schema Validation.md",
+      "x": 2600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm-generation-pipeline",
+      "type": "file",
+      "file": "LLM Generation Pipeline.md",
+      "x": 2800,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_logits",
+      "type": "file",
+      "file": "Logits (probability scores).md",
+      "x": 3000,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_output-formatting",
+      "type": "file",
+      "file": "Output Formatting.md",
+      "x": 2600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_parameter-extraction",
+      "type": "file",
+      "file": "Parameter Extraction.md",
+      "x": 2800,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_token-trie",
+      "type": "file",
+      "file": "Token-ID Trie for function name constrained decoding.md",
+      "x": 3000,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_tokenization",
+      "type": "file",
+      "file": "Tokenization.md",
+      "x": 2600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_trienode-dataclass",
+      "type": "file",
+      "file": "TrieNode dataclass.md",
+      "x": 2800,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_generate-parameters",
+      "type": "file",
+      "file": "_generate_parameters()_1.md",
+      "x": 3000,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_input-files",
+      "type": "file",
+      "file": "datainput directory (test inputs).md",
+      "x": 2600,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_output-file",
+      "type": "file",
+      "file": "dataoutputfunction_calling_results.json.md",
+      "x": 2800,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decode-function",
+      "type": "file",
+      "file": "decode()_1.md",
+      "x": 3000,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main-cli",
+      "type": "file",
+      "file": "main() CLI entry point.md",
+      "x": 2600,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_run-pipeline",
+      "type": "file",
+      "file": "run_pipeline()_1.md",
+      "x": 2800,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_select-function-name",
+      "type": "file",
+      "file": "select_function_name()_1.md",
+      "x": 3000,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main-py",
+      "type": "file",
+      "file": "src__main__.py.md",
+      "x": 2600,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cli-py",
+      "type": "file",
+      "file": "srccli.py.md",
+      "x": 2800,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decoder-py",
+      "type": "file",
+      "file": "srcdecoder.py.md",
+      "x": 3000,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pipeline-py",
+      "type": "file",
+      "file": "srcpipeline.py.md",
+      "x": 2600,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Constrained Decoding Engine",
+      "x": 3760,
+      "y": 0,
+      "width": 1100,
+      "height": 820,
+      "color": "4"
+    },
+    {
+      "id": "n_src_decoder_rationale_58",
+      "type": "file",
+      "file": "Build a token-id trie for function names..md",
+      "x": 3780,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_1",
+      "type": "file",
+      "file": "Constrained decoding utilities..md",
+      "x": 3980,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_31",
+      "type": "file",
+      "file": "Convert tensor-like outputs to a flat list of ints..md",
+      "x": 4180,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_240",
+      "type": "file",
+      "file": "Decode a constrained function call (name + parameters)..md",
+      "x": 3780,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_24",
+      "type": "file",
+      "file": "Decoded function call data with parameters..md",
+      "x": 3980,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_decodedcall",
+      "type": "file",
+      "file": "DecodedCall.md",
+      "x": 4180,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_py_functiondefinition",
+      "type": "file",
+      "file": "FunctionDefinition.md",
+      "x": 3780,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_120",
+      "type": "file",
+      "file": "Generate parameters for the selected function..md",
+      "x": 3980,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_77",
+      "type": "file",
+      "file": "Pick the best function name using the LLM scores..md",
+      "x": 4180,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_42",
+      "type": "file",
+      "file": "Pick the token id with highest logit among allowed ids..md",
+      "x": 3780,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_small_llm_model",
+      "type": "file",
+      "file": "Small_LLM_Model_1.md",
+      "x": 3980,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_rationale_17",
+      "type": "file",
+      "file": "Token-id trie node for constrained name decoding..md",
+      "x": 4180,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_trienode",
+      "type": "file",
+      "file": "TrieNode.md",
+      "x": 3780,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_typeddict",
+      "type": "file",
+      "file": "TypedDict.md",
+      "x": 3980,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_build_token_trie",
+      "type": "file",
+      "file": "_build_token_trie().md",
+      "x": 4180,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_generate_parameters",
+      "type": "file",
+      "file": "_generate_parameters().md",
+      "x": 3780,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_select_max_logit",
+      "type": "file",
+      "file": "_select_max_logit().md",
+      "x": 3980,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_tensor_to_ids",
+      "type": "file",
+      "file": "_tensor_to_ids().md",
+      "x": 4180,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_decode",
+      "type": "file",
+      "file": "decode().md",
+      "x": 3780,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder",
+      "type": "file",
+      "file": "decoder.py.md",
+      "x": 3980,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_decoder_select_function_name",
+      "type": "file",
+      "file": "select_function_name().md",
+      "x": 4180,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "LLM Model Wrapper",
+      "x": 0,
+      "y": 1400,
+      "width": 880,
+      "height": 620,
+      "color": "5"
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_init",
+      "type": "file",
+      "file": ".__init__().md",
+      "x": 20,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_decode",
+      "type": "file",
+      "file": ".decode().md",
+      "x": 220,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_encode",
+      "type": "file",
+      "file": ".encode().md",
+      "x": 420,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_get_logits_from_input_ids",
+      "type": "file",
+      "file": ".get_logits_from_input_ids().md",
+      "x": 20,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_get_path_to_merges_file",
+      "type": "file",
+      "file": ".get_path_to_merges_file().md",
+      "x": 220,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_get_path_to_tokenizer_file",
+      "type": "file",
+      "file": ".get_path_to_tokenizer_file().md",
+      "x": 420,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model_get_path_to_vocab_file",
+      "type": "file",
+      "file": ".get_path_to_vocab_file().md",
+      "x": 20,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_rationale_91",
+      "type": "file",
+      "file": "Given a list of input token ids, return the raw logits (no softmax) for the next.md",
+      "x": 220,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_rationale_84",
+      "type": "file",
+      "file": "Inverse of pymeth`encode`. Removes special tokens..md",
+      "x": 420,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_small_llm_model",
+      "type": "file",
+      "file": "Small_LLM_Model.md",
+      "x": 20,
+      "y": 1720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_tensor",
+      "type": "file",
+      "file": "Tensor.md",
+      "x": 220,
+      "y": 1720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_rationale_78",
+      "type": "file",
+      "file": "Tokenise text and return a 2-D ``input_ids`` tensor on the target device..md",
+      "x": 420,
+      "y": 1720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init_rationale_17",
+      "type": "file",
+      "file": "Utility class wrapping a lightweight Hugging Face causal-LM for fast, low-memory.md",
+      "x": 20,
+      "y": 1800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_llm_sdk_init",
+      "type": "file",
+      "file": "__init__.py.md",
+      "x": 220,
+      "y": 1800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_dtype",
+      "type": "file",
+      "file": "dtype.md",
+      "x": 420,
+      "y": 1800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Pydantic Data Models",
+      "x": 1400,
+      "y": 1400,
+      "width": 660,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_functiondefinition-model",
+      "type": "file",
+      "file": "FunctionDefinition Pydantic model.md",
+      "x": 1420,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_outputitem-model",
+      "type": "file",
+      "file": "OutputItem Pydantic model.md",
+      "x": 1620,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_parameterspec-model",
+      "type": "file",
+      "file": "ParameterSpec Pydantic model.md",
+      "x": 1820,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_promptitem-model",
+      "type": "file",
+      "file": "PromptItem Pydantic model.md",
+      "x": 1420,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_load-function-definitions",
+      "type": "file",
+      "file": "load_function_definitions()_1.md",
+      "x": 1620,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_load-prompts",
+      "type": "file",
+      "file": "load_prompts()_1.md",
+      "x": 1820,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_io-utils-py",
+      "type": "file",
+      "file": "srcio_utils.py.md",
+      "x": 1420,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_schema-py",
+      "type": "file",
+      "file": "srcschema.py.md",
+      "x": 1620,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_write-output",
+      "type": "file",
+      "file": "write_output()_1.md",
+      "x": 1820,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "CLI Entry Point",
+      "x": 2580,
+      "y": 1400,
+      "width": 660,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_argumentparser",
+      "type": "file",
+      "file": "ArgumentParser.md",
+      "x": 2600,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli_rationale_1",
+      "type": "file",
+      "file": "Command-line interface..md",
+      "x": 2800,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli_rationale_13",
+      "type": "file",
+      "file": "Create the CLI argument parser..md",
+      "x": 3000,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli_rationale_34",
+      "type": "file",
+      "file": "Run the CLI entry point..md",
+      "x": 2600,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_main",
+      "type": "file",
+      "file": "__main__.py.md",
+      "x": 2800,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli_build_parser",
+      "type": "file",
+      "file": "_build_parser().md",
+      "x": 3000,
+      "y": 1560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli",
+      "type": "file",
+      "file": "cli.py.md",
+      "x": 2600,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_cli_main",
+      "type": "file",
+      "file": "main().md",
+      "x": 2800,
+      "y": 1640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "LLM SDK Init",
+      "x": 3760,
+      "y": 1400,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_llm-sdk-init-py",
+      "type": "file",
+      "file": "llm_sdkllm_sdk__init__.py.md",
+      "x": 3780,
+      "y": 1480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Testing Framework",
+      "x": 0,
+      "y": 2100,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_pytest",
+      "type": "file",
+      "file": "Pytest testing framework.md",
+      "x": 20,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Package Init",
+      "x": 1400,
+      "y": 2100,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_src_init",
+      "type": "file",
+      "file": "__init__.py_1.md",
+      "x": 1420,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_llm_sdk_init_llm_sdk_init_small_llm_model",
+      "fromNode": "n_llm_sdk_init",
+      "toNode": "n_llm_sdk_init_small_llm_model",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_rationale_17",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_rationale_17",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_decode",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_decode",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_encode",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_encode",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_get_logits_from_input_ids",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_get_logits_from_input_ids",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_get_path_to_merges_file",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_get_path_to_merges_file",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_get_path_to_tokenizer_file",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_get_path_to_tokenizer_file",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_get_path_to_vocab_file",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_get_path_to_vocab_file",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_llm_sdk_init_small_llm_model_init",
+      "fromNode": "n_llm_sdk_init_small_llm_model",
+      "toNode": "n_llm_sdk_init_small_llm_model_init",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_init_dtype",
+      "fromNode": "n_llm_sdk_init_small_llm_model_init",
+      "toNode": "n_dtype",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_encode_llm_sdk_init_rationale_78",
+      "fromNode": "n_llm_sdk_init_small_llm_model_encode",
+      "toNode": "n_llm_sdk_init_rationale_78",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_encode_tensor",
+      "fromNode": "n_llm_sdk_init_small_llm_model_encode",
+      "toNode": "n_tensor",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_tensor_llm_sdk_init_small_llm_model_decode",
+      "fromNode": "n_tensor",
+      "toNode": "n_llm_sdk_init_small_llm_model_decode",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_decode_llm_sdk_init_rationale_84",
+      "fromNode": "n_llm_sdk_init_small_llm_model_decode",
+      "toNode": "n_llm_sdk_init_rationale_84",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_llm_sdk_init_small_llm_model_get_logits_from_input_ids_llm_sdk_init_rationale_91",
+      "fromNode": "n_llm_sdk_init_small_llm_model_get_logits_from_input_ids",
+      "toNode": "n_llm_sdk_init_rationale_91",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_main_src_cli",
+      "fromNode": "n_src_main",
+      "toNode": "n_src_cli",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_main_src_cli_main",
+      "fromNode": "n_src_main",
+      "toNode": "n_src_cli_main",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_src_cli_build_parser",
+      "fromNode": "n_src_cli",
+      "toNode": "n_src_cli_build_parser",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_src_cli_main",
+      "fromNode": "n_src_cli",
+      "toNode": "n_src_cli_main",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_src_pipeline",
+      "fromNode": "n_src_cli",
+      "toNode": "n_src_pipeline",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_src_pipeline_run_pipeline",
+      "fromNode": "n_src_cli",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_src_cli_rationale_1",
+      "fromNode": "n_src_cli",
+      "toNode": "n_src_cli_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_build_parser_argumentparser",
+      "fromNode": "n_src_cli_build_parser",
+      "toNode": "n_argumentparser",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_build_parser_src_cli_main",
+      "fromNode": "n_src_cli_build_parser",
+      "toNode": "n_src_cli_main",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_build_parser_src_cli_rationale_13",
+      "fromNode": "n_src_cli_build_parser",
+      "toNode": "n_src_cli_rationale_13",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_main_src_pipeline_run_pipeline",
+      "fromNode": "n_src_cli_main",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_cli_main_src_cli_rationale_34",
+      "fromNode": "n_src_cli_main",
+      "toNode": "n_src_cli_rationale_34",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_build_token_trie",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_build_token_trie",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_decode",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_decode",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_decodedcall",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_decodedcall",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_generate_parameters",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_generate_parameters",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_select_function_name",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_select_max_logit",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_select_max_logit",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_tensor_to_ids",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_tensor_to_ids",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_trienode",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_trienode",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_schema",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_schema",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_schema_functiondefinition",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_decoder_rationale_1",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_decoder_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_src_pipeline",
+      "fromNode": "n_src_decoder",
+      "toNode": "n_src_pipeline",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_trienode_src_decoder_build_token_trie",
+      "fromNode": "n_src_decoder_trienode",
+      "toNode": "n_src_decoder_build_token_trie",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_trienode_src_decoder_rationale_17",
+      "fromNode": "n_src_decoder_trienode",
+      "toNode": "n_src_decoder_rationale_17",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decodedcall_src_decoder_decode",
+      "fromNode": "n_src_decoder_decodedcall",
+      "toNode": "n_src_decoder_decode",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decodedcall_typeddict",
+      "fromNode": "n_src_decoder_decodedcall",
+      "toNode": "n_typeddict",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decodedcall_src_decoder_rationale_24",
+      "fromNode": "n_src_decoder_decodedcall",
+      "toNode": "n_src_decoder_rationale_24",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_tensor_to_ids_src_decoder_build_token_trie",
+      "fromNode": "n_src_decoder_tensor_to_ids",
+      "toNode": "n_src_decoder_build_token_trie",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_tensor_to_ids_src_decoder_rationale_31",
+      "fromNode": "n_src_decoder_tensor_to_ids",
+      "toNode": "n_src_decoder_rationale_31",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_tensor_to_ids_src_decoder_select_function_name",
+      "fromNode": "n_src_decoder_tensor_to_ids",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_select_max_logit_src_decoder_rationale_42",
+      "fromNode": "n_src_decoder_select_max_logit",
+      "toNode": "n_src_decoder_rationale_42",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_select_max_logit_src_decoder_select_function_name",
+      "fromNode": "n_src_decoder_select_max_logit",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_build_token_trie_small_llm_model",
+      "fromNode": "n_src_decoder_build_token_trie",
+      "toNode": "n_small_llm_model",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_build_token_trie_src_decoder_py_functiondefinition",
+      "fromNode": "n_src_decoder_build_token_trie",
+      "toNode": "n_src_decoder_py_functiondefinition",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_build_token_trie_src_decoder_rationale_58",
+      "fromNode": "n_src_decoder_build_token_trie",
+      "toNode": "n_src_decoder_rationale_58",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_build_token_trie_src_decoder_select_function_name",
+      "fromNode": "n_src_decoder_build_token_trie",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_py_functiondefinition_src_decoder_decode",
+      "fromNode": "n_src_decoder_py_functiondefinition",
+      "toNode": "n_src_decoder_decode",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_py_functiondefinition_src_decoder_generate_parameters",
+      "fromNode": "n_src_decoder_py_functiondefinition",
+      "toNode": "n_src_decoder_generate_parameters",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_py_functiondefinition_src_decoder_select_function_name",
+      "fromNode": "n_src_decoder_py_functiondefinition",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_small_llm_model_src_decoder_decode",
+      "fromNode": "n_small_llm_model",
+      "toNode": "n_src_decoder_decode",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_small_llm_model_src_decoder_select_function_name",
+      "fromNode": "n_small_llm_model",
+      "toNode": "n_src_decoder_select_function_name",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_small_llm_model_src_pipeline_run_pipeline",
+      "fromNode": "n_small_llm_model",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_select_function_name_src_decoder_decode",
+      "fromNode": "n_src_decoder_select_function_name",
+      "toNode": "n_src_decoder_decode",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_select_function_name_src_decoder_rationale_77",
+      "fromNode": "n_src_decoder_select_function_name",
+      "toNode": "n_src_decoder_rationale_77",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_generate_parameters_src_decoder_decode",
+      "fromNode": "n_src_decoder_generate_parameters",
+      "toNode": "n_src_decoder_decode",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_generate_parameters_src_decoder_rationale_120",
+      "fromNode": "n_src_decoder_generate_parameters",
+      "toNode": "n_src_decoder_rationale_120",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decode_src_decoder_rationale_240",
+      "fromNode": "n_src_decoder_decode",
+      "toNode": "n_src_decoder_rationale_240",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decode_src_pipeline",
+      "fromNode": "n_src_decoder_decode",
+      "toNode": "n_src_pipeline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_decode_src_pipeline_run_pipeline",
+      "fromNode": "n_src_decoder_decode",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_pydantic",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_pydantic",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_load_function_definitions",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_load_function_definitions",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_load_json_file",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_load_json_file",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_load_prompts",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_load_prompts",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_validate_model",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_validate_model",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_write_output",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_write_output",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_schema",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_schema",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_schema_functiondefinition",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_schema_outputitem",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_schema_outputitem",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_schema_promptitem",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_schema_promptitem",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_io_utils_rationale_1",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_io_utils_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_src_pipeline",
+      "fromNode": "n_src_io_utils",
+      "toNode": "n_src_pipeline",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_validate_model_src_io_utils_load_function_definitions",
+      "fromNode": "n_src_io_utils_validate_model",
+      "toNode": "n_src_io_utils_load_function_definitions",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_validate_model_src_io_utils_load_prompts",
+      "fromNode": "n_src_io_utils_validate_model",
+      "toNode": "n_src_io_utils_load_prompts",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_validate_model_src_io_utils_rationale_17",
+      "fromNode": "n_src_io_utils_validate_model",
+      "toNode": "n_src_io_utils_rationale_17",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_validate_model_modelt",
+      "fromNode": "n_src_io_utils_validate_model",
+      "toNode": "n_modelt",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_validate_model_src_io_utils_py_any",
+      "fromNode": "n_src_io_utils_validate_model",
+      "toNode": "n_src_io_utils_py_any",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_py_any_src_io_utils_load_json_file",
+      "fromNode": "n_src_io_utils_py_any",
+      "toNode": "n_src_io_utils_load_json_file",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_json_file_src_io_utils_load_function_definitions",
+      "fromNode": "n_src_io_utils_load_json_file",
+      "toNode": "n_src_io_utils_load_function_definitions",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_json_file_src_io_utils_load_prompts",
+      "fromNode": "n_src_io_utils_load_json_file",
+      "toNode": "n_src_io_utils_load_prompts",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_json_file_src_io_utils_rationale_25",
+      "fromNode": "n_src_io_utils_load_json_file",
+      "toNode": "n_src_io_utils_rationale_25",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_function_definitions_src_io_utils_py_functiondefinition",
+      "fromNode": "n_src_io_utils_load_function_definitions",
+      "toNode": "n_src_io_utils_py_functiondefinition",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_function_definitions_src_io_utils_rationale_38",
+      "fromNode": "n_src_io_utils_load_function_definitions",
+      "toNode": "n_src_io_utils_rationale_38",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_function_definitions_src_pipeline",
+      "fromNode": "n_src_io_utils_load_function_definitions",
+      "toNode": "n_src_pipeline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_function_definitions_src_pipeline_run_pipeline",
+      "fromNode": "n_src_io_utils_load_function_definitions",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_prompts_promptitem",
+      "fromNode": "n_src_io_utils_load_prompts",
+      "toNode": "n_promptitem",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_prompts_src_io_utils_rationale_48",
+      "fromNode": "n_src_io_utils_load_prompts",
+      "toNode": "n_src_io_utils_rationale_48",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_prompts_src_pipeline",
+      "fromNode": "n_src_io_utils_load_prompts",
+      "toNode": "n_src_pipeline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_load_prompts_src_pipeline_run_pipeline",
+      "fromNode": "n_src_io_utils_load_prompts",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_write_output_src_io_utils_rationale_58",
+      "fromNode": "n_src_io_utils_write_output",
+      "toNode": "n_src_io_utils_rationale_58",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_write_output_outputitem",
+      "fromNode": "n_src_io_utils_write_output",
+      "toNode": "n_outputitem",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_write_output_src_pipeline",
+      "fromNode": "n_src_io_utils_write_output",
+      "toNode": "n_src_pipeline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_io_utils_write_output_src_pipeline_run_pipeline",
+      "fromNode": "n_src_io_utils_write_output",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_src_pipeline_run_pipeline",
+      "fromNode": "n_src_pipeline",
+      "toNode": "n_src_pipeline_run_pipeline",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_src_schema",
+      "fromNode": "n_src_pipeline",
+      "toNode": "n_src_schema",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_src_schema_outputitem",
+      "fromNode": "n_src_pipeline",
+      "toNode": "n_src_schema_outputitem",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_run_pipeline_src_pipeline_rationale_20",
+      "fromNode": "n_src_pipeline_run_pipeline",
+      "toNode": "n_src_pipeline_rationale_20",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_run_pipeline_src_pipeline_py_any",
+      "fromNode": "n_src_pipeline_run_pipeline",
+      "toNode": "n_src_pipeline_py_any",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_src_pipeline_run_pipeline_src_schema_outputitem",
+      "fromNode": "n_src_pipeline_run_pipeline",
+      "toNode": "n_src_schema_outputitem",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_pydantic",
+      "fromNode": "n_src_schema",
+      "toNode": "n_pydantic",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_src_schema_functiondefinition",
+      "fromNode": "n_src_schema",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_src_schema_outputitem",
+      "fromNode": "n_src_schema",
+      "toNode": "n_src_schema_outputitem",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_src_schema_parameterspec",
+      "fromNode": "n_src_schema",
+      "toNode": "n_src_schema_parameterspec",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_src_schema_promptitem",
+      "fromNode": "n_src_schema",
+      "toNode": "n_src_schema_promptitem",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_src_schema_rationale_1",
+      "fromNode": "n_src_schema",
+      "toNode": "n_src_schema_rationale_1",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_parameterspec_basemodel",
+      "fromNode": "n_src_schema_parameterspec",
+      "toNode": "n_basemodel",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_parameterspec_src_schema_rationale_21",
+      "fromNode": "n_src_schema_parameterspec",
+      "toNode": "n_src_schema_rationale_21",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_src_schema_functiondefinition",
+      "fromNode": "n_basemodel",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_src_schema_outputitem",
+      "fromNode": "n_basemodel",
+      "toNode": "n_src_schema_outputitem",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_basemodel_src_schema_promptitem",
+      "fromNode": "n_basemodel",
+      "toNode": "n_src_schema_promptitem",
+      "label": "inherits [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_functiondefinition_src_schema_rationale_27",
+      "fromNode": "n_src_schema_functiondefinition",
+      "toNode": "n_src_schema_rationale_27",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_promptitem_src_schema_rationale_36",
+      "fromNode": "n_src_schema_promptitem",
+      "toNode": "n_src_schema_rationale_36",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_src_schema_outputitem_src_schema_rationale_42",
+      "fromNode": "n_src_schema_outputitem",
+      "toNode": "n_src_schema_rationale_42",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_42-curriculum",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_42-curriculum",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_constrained-decoding",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_constrained-decoding",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_function-calling",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_function-calling",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_login1",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_login1",
+      "label": "[AMBIGUOUS]"
+    },
+    {
+      "id": "e_call-me-maybe_qwen-qwen3-0-6b",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_qwen-qwen3-0-6b",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_error-handling",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_error-handling",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_flake8",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_flake8",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_llm-sdk-package",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_llm-sdk-package",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_makefile",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_makefile",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_mypy",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_mypy",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_numpy",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_numpy",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_pydantic",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_pydantic",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_pyproject-toml",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_pyproject-toml",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_readme-file",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_readme-file",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_subject-pdf",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_subject-pdf",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_type-hints",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_type-hints",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_call-me-maybe_uv-package-manager",
+      "fromNode": "n_call-me-maybe",
+      "toNode": "n_uv-package-manager",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_function-calling_natural-language-to-function-call",
+      "fromNode": "n_function-calling",
+      "toNode": "n_natural-language-to-function-call",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_function-calling_structured-output",
+      "fromNode": "n_function-calling",
+      "toNode": "n_structured-output",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_constrained-decoding_small-language-model",
+      "fromNode": "n_constrained-decoding",
+      "toNode": "n_small-language-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_constrained-decoding_token-trie-constrained-decoding",
+      "fromNode": "n_constrained-decoding",
+      "toNode": "n_token-trie-constrained-decoding",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_constrained-decoding_token-trie",
+      "fromNode": "n_constrained-decoding",
+      "toNode": "n_token-trie",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_deterministic-parameter-extraction_generate-parameters",
+      "fromNode": "n_deterministic-parameter-extraction",
+      "toNode": "n_generate-parameters",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_llm-generation-pipeline_function-selection",
+      "fromNode": "n_llm-generation-pipeline",
+      "toNode": "n_function-selection",
+      "label": "[INFERRED]"
+    },
+    {
+      "id": "e_llm-generation-pipeline_logits",
+      "fromNode": "n_llm-generation-pipeline",
+      "toNode": "n_logits",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_llm-generation-pipeline_output-formatting",
+      "fromNode": "n_llm-generation-pipeline",
+      "toNode": "n_output-formatting",
+      "label": "[INFERRED]"
+    },
+    {
+      "id": "e_llm-generation-pipeline_parameter-extraction",
+      "fromNode": "n_llm-generation-pipeline",
+      "toNode": "n_parameter-extraction",
+      "label": "[INFERRED]"
+    },
+    {
+      "id": "e_llm-generation-pipeline_tokenization",
+      "fromNode": "n_llm-generation-pipeline",
+      "toNode": "n_tokenization",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_function-selection_select-function-name",
+      "fromNode": "n_function-selection",
+      "toNode": "n_select-function-name",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_parameter-extraction_generate-parameters",
+      "fromNode": "n_parameter-extraction",
+      "toNode": "n_generate-parameters",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_json-schema-validation_output-file",
+      "fromNode": "n_json-schema-validation",
+      "toNode": "n_output-file",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_small-language-model_qwen-qwen3-0-6b",
+      "fromNode": "n_small-language-model",
+      "toNode": "n_qwen-qwen3-0-6b",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_pydantic_pydantic-validation",
+      "fromNode": "n_pydantic",
+      "toNode": "n_pydantic-validation",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_qwen-qwen3-0-6b_small-llm-model",
+      "fromNode": "n_qwen-qwen3-0-6b",
+      "toNode": "n_small-llm-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_small-llm-model_run-pipeline",
+      "fromNode": "n_small-llm-model",
+      "toNode": "n_run-pipeline",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_small-llm-model_llm-sdk-package",
+      "fromNode": "n_small-llm-model",
+      "toNode": "n_llm-sdk-package",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_subject-pdf_crfernan",
+      "fromNode": "n_subject-pdf",
+      "toNode": "n_crfernan",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_subject-pdf_ldevelle",
+      "fromNode": "n_subject-pdf",
+      "toNode": "n_ldevelle",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_subject-pdf_pcamaren",
+      "fromNode": "n_subject-pdf",
+      "toNode": "n_pcamaren",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_pipeline-py_run-pipeline",
+      "fromNode": "n_pipeline-py",
+      "toNode": "n_run-pipeline",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_decoder-py_decodedcall-typeddict",
+      "fromNode": "n_decoder-py",
+      "toNode": "n_decodedcall-typeddict",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_decoder-py_trienode-dataclass",
+      "fromNode": "n_decoder-py",
+      "toNode": "n_trienode-dataclass",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_schema-py_functiondefinition-model",
+      "fromNode": "n_schema-py",
+      "toNode": "n_functiondefinition-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_schema-py_outputitem-model",
+      "fromNode": "n_schema-py",
+      "toNode": "n_outputitem-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_schema-py_parameterspec-model",
+      "fromNode": "n_schema-py",
+      "toNode": "n_parameterspec-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_schema-py_promptitem-model",
+      "fromNode": "n_schema-py",
+      "toNode": "n_promptitem-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_cli-py_main-cli",
+      "fromNode": "n_cli-py",
+      "toNode": "n_main-cli",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_io-utils-py_load-function-definitions",
+      "fromNode": "n_io-utils-py",
+      "toNode": "n_load-function-definitions",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_io-utils-py_load-prompts",
+      "fromNode": "n_io-utils-py",
+      "toNode": "n_load-prompts",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_io-utils-py_write-output",
+      "fromNode": "n_io-utils-py",
+      "toNode": "n_write-output",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_main-py_main-cli",
+      "fromNode": "n_main-py",
+      "toNode": "n_main-cli",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_run-pipeline_input-files",
+      "fromNode": "n_run-pipeline",
+      "toNode": "n_input-files",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_run-pipeline_main-cli",
+      "fromNode": "n_run-pipeline",
+      "toNode": "n_main-cli",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_run-pipeline_decode-function",
+      "fromNode": "n_run-pipeline",
+      "toNode": "n_decode-function",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_run-pipeline_output-file",
+      "fromNode": "n_run-pipeline",
+      "toNode": "n_output-file",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_decode-function_generate-parameters",
+      "fromNode": "n_decode-function",
+      "toNode": "n_generate-parameters",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_decode-function_select-function-name",
+      "fromNode": "n_decode-function",
+      "toNode": "n_select-function-name",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_select-function-name_token-trie",
+      "fromNode": "n_select-function-name",
+      "toNode": "n_token-trie",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_load-function-definitions_functiondefinition-model",
+      "fromNode": "n_load-function-definitions",
+      "toNode": "n_functiondefinition-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_load-prompts_promptitem-model",
+      "fromNode": "n_load-prompts",
+      "toNode": "n_promptitem-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_write-output_outputitem-model",
+      "fromNode": "n_write-output",
+      "toNode": "n_outputitem-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_trienode-dataclass_token-trie",
+      "fromNode": "n_trienode-dataclass",
+      "toNode": "n_token-trie",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_functiondefinition-model_parameterspec-model",
+      "fromNode": "n_functiondefinition-model",
+      "toNode": "n_parameterspec-model",
+      "label": "[EXTRACTED]"
+    },
+    {
+      "id": "e_src_decoder_trienode_src_schema_functiondefinition",
+      "fromNode": "n_src_decoder_trienode",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_decoder_decodedcall_src_schema_functiondefinition",
+      "fromNode": "n_src_decoder_decodedcall",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_decoder_py_functiondefinition_src_schema_functiondefinition",
+      "fromNode": "n_src_decoder_py_functiondefinition",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_small_llm_model_src_schema_functiondefinition",
+      "fromNode": "n_small_llm_model",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_modelt_src_schema_functiondefinition",
+      "fromNode": "n_modelt",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_modelt_src_schema_outputitem",
+      "fromNode": "n_modelt",
+      "toNode": "n_src_schema_outputitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_modelt_src_schema_promptitem",
+      "fromNode": "n_modelt",
+      "toNode": "n_src_schema_promptitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_any_src_schema_functiondefinition",
+      "fromNode": "n_src_io_utils_py_any",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_any_src_schema_outputitem",
+      "fromNode": "n_src_io_utils_py_any",
+      "toNode": "n_src_schema_outputitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_any_src_schema_promptitem",
+      "fromNode": "n_src_io_utils_py_any",
+      "toNode": "n_src_schema_promptitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_functiondefinition_src_schema_functiondefinition",
+      "fromNode": "n_src_io_utils_py_functiondefinition",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_functiondefinition_src_schema_outputitem",
+      "fromNode": "n_src_io_utils_py_functiondefinition",
+      "toNode": "n_src_schema_outputitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_src_io_utils_py_functiondefinition_src_schema_promptitem",
+      "fromNode": "n_src_io_utils_py_functiondefinition",
+      "toNode": "n_src_schema_promptitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_promptitem_src_schema_functiondefinition",
+      "fromNode": "n_promptitem",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_promptitem_src_schema_outputitem",
+      "fromNode": "n_promptitem",
+      "toNode": "n_src_schema_outputitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_promptitem_src_schema_promptitem",
+      "fromNode": "n_promptitem",
+      "toNode": "n_src_schema_promptitem",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_outputitem_src_schema_functiondefinition",
+      "fromNode": "n_outputitem",
+      "toNode": "n_src_schema_functiondefinition",
+      "label": "uses [INFERRED]"
+    },
+    {
+      "id": "e_outputitem_src_schema_outputitem",
+      "fromNode": "n_outputitem",
+      "toNode": "n_src_schema_outputitem",
+      "label": "uses [INFERRED]"
+    }
+  ]
+}

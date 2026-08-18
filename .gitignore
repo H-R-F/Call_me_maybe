@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.mypy_cache/
+.pytest_cache/
+.venv/
+.mypy_cache/
+.dist/
+build/
+# Output files
+/data/output/

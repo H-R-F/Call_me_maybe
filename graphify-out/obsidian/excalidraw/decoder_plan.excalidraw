@@ -1,0 +1,68 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "text",
+      "version": 1,
+      "x": 100,
+      "y": 50,
+      "text": "Decoder Development Plan\\n(Function Calling Pipeline)",
+      "fontSize": 28,
+      "textAlign": "center"
+    },
+    {
+      "type": "rectangle",
+      "x": 50,
+      "y": 150,
+      "width": 300,
+      "height": 420,
+      "label": "Overall Flow"
+    },
+    {
+      "type": "arrow",
+      "x": 380,
+      "y": 200,
+      "points": [[0,0], [100,0]]
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 120,
+      "text": "1. Setup & Imports",
+      "fontSize": 20
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 180,
+      "text": "2. Build System Prompt\\n+ Format Functions"
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 250,
+      "text": "3. Token-by-Token\\nGeneration Engine"
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 320,
+      "text": "4. JSON Extraction\\n& Parsing"
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 390,
+      "text": "5. Main decode() Function"
+    },
+    {
+      "type": "text",
+      "x": 500,
+      "y": 460,
+      "text": "6. Error Handling & Testing"
+    }
+  ],
+  "files": {}
+}
