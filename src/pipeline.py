@@ -22,20 +22,23 @@ def run_pipeline(
     decoder = ConstrainedDecoder(model, functions)
     outputs: list[OutputItem] = []
 
-    for item in prompts:
-        decoded = decode(
-            model=model,
-            prompt=item.prompt,
-            functions=functions,
-            decoder=decoder,
-        )
-        outputs.append(
-            OutputItem(
-                prompt=item.prompt,
-                name=decoded["name"],
-                parameters=decoded["parameters"],
-            )
-        )
+    print(functions)
+    print(prompts)
+
+    # for item in prompts:
+    #     decoded = decode(
+    #         model=model,
+    #         prompt=item.prompt,
+    #         functions=functions,
+    #         decoder=decoder,
+    #     )
+    #     outputs.append(
+    #         OutputItem(
+    #             prompt=item.prompt,
+    #             name=decoded["name"],
+    #             parameters=decoded["parameters"],
+    #         )
+    #     )
 
     write_output(output_path, outputs)
     return [item.model_dump() for item in outputs]

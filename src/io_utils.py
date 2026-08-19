@@ -8,24 +8,15 @@ from pydantic import BaseModel
 
 from .schema import FunctionDefinition, OutputItem, PromptItem
 
-ModelT = TypeVar("ModelT", bound=BaseModel)
-
-
-def _validate_model(model_type: type[ModelT], data: Any) -> ModelT:
-    """Validate arbitrary data into a Pydantic model"""
-    return cast(ModelT,model_type.model_validate(data))
-
 
 def load_json_file(path: str) -> Any:
     """Load JSON content from a file and return raw data"""
     try:
         with open(path, "r") as f:
-            raw_text = f.read()
-            print(raw_text)
+            data = json.load(f)
+        return data
     except FileNotFoundError as exc:
         raise FileNotFoundError(f'Input file not found: "{path}"') from exc
-    try:
-        return json.loads(raw_text)
     except json.JSONDecodeError as exc:
         raise ValueError(f'Invalid JSON in file: "{path}"') from exc
 
@@ -37,7 +28,13 @@ def load_function_definitions(path: str) -> list[FunctionDefinition]:
         raise ValueError(
             f'"{path}" must contain a JSON array'
         )
-    return [_validate_model(FunctionDefinition, item) for item in data]
+    functions: list[FunctionDefinition] = []
+    for item in data:
+        try:
+            functions.append(FunctionDefinition.model_validate(item))
+        except ValueError as exc:
+            raise ValueError(f'Invalid data in input file: "{path}": {exc}') from exc
+    return functions
 
 
 def load_prompts(path: str) -> list[PromptItem]:
@@ -47,7 +44,13 @@ def load_prompts(path: str) -> list[PromptItem]:
         raise ValueError(
             f'"{path}" must contain a JSON array'
         )
-    return [_validate_model(PromptItem, item) for item in data]
+    prompts: list[PromptItem] = []
+    for item in data:
+        try:
+            prompts.append(PromptItem.model_validate(item))
+        except ValueError as exc:
+            raise ValueError(f'Invalid data in input file: "{path}": {exc}') from exc
+    return prompts
 
 
 def write_output(path: str, items: Iterable[OutputItem]) -> None:

@@ -13,21 +13,6 @@
     "returns": {
       "type": "number"
     }
-  },  
-  {
-    "name": "fn_multiply_numbers",
-    "description": "multiply two numbers together and return their product.",
-    "parameters": {
-      "a": {
-        "type": "number"
-      },
-      "b": {
-        "type": "number"
-      }
-    },
-    "returns": {
-      "type": "number"
-    }
   },
   {
     "name": "fn_greet",
