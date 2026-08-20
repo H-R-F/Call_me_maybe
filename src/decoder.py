@@ -3,6 +3,7 @@ import json
 from llm_sdk import Small_LLM_Model
 from .schema import FunctionDefinition
 
+
 class TrieNode:
     def __init__(self):
         self.children: dict[int, TrieNode] = {}
@@ -14,7 +15,8 @@ class TrieNode:
             if token_id not in node.children:
                 node.children[token_id] = TrieNode()
             node = node.children[token_id]
-        node.terminal = True 
+        node.terminal = True
+
 
 class ConstrainedDecoder():
     def __init__(self, model: Small_LLM_Model, function: list[FunctionDefinition]):
@@ -26,7 +28,7 @@ class ConstrainedDecoder():
         with open(vocab_path, 'r') as f:
             vocab_str_to_id = json.load(f)
         self.vocab: dict[int, str] = {v: k for k, v in vocab_str_to_id.items()}
-        
+
         #  Pre-compute vocab list for faster iteration
         self.vocab_items = list(self.vocab.items())
         self.vocab_size = len(self.vocab)
@@ -36,18 +38,17 @@ class ConstrainedDecoder():
         for name in self.functions_by_name:
             token_ids = self.model.encode(name).tolist()[0]
             self.func_trie.insert(token_ids)
-        
+
         # Build boolean trie
         self.bool_trie = TrieNode()
         for bool_str in ["true", "false"]:
             token_ids = self.model.encode(bool_str).tolist()[0]
             self.bool_trie.insert(token_ids)
-        
+
         #  Pre-encode fixed tokens (already doing this!)
         self.fixed_tokens: dict[str, list[int]] = {}  # Changed to list for multi-token
         for text in ["{", '"name"', '"parameters"', ":", ",", "}", '"']:
             self.fixed_tokens[text] = self.model.encode(text).tolist()[0]
-
 
     def generate_function_name(self, input_ids: list[int]) -> list[int]:
         current_node = self.func_trie
@@ -59,7 +60,7 @@ class ConstrainedDecoder():
 
             if not allowed_token_ids:
                 raise ValueError("No Valid token available in trie")
-            
+
             full_input = input_ids + generated_tokens
             logit = self.model.get_logits_from_input_ids(full_input)
 
@@ -68,14 +69,14 @@ class ConstrainedDecoder():
             for token_id in range(len(masked_logit)):
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
-            
+
             chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
 
             if masked_logit[chosen_max] == float('-inf'):
                 chosen_token = allowed_token_ids[0]
             else:
                 chosen_token = chosen_max
-            
+
             generated_tokens.append(chosen_token)
             current_node = current_node.children[chosen_token]
 
@@ -91,10 +92,10 @@ class ConstrainedDecoder():
 
         for _ in range(max_step):
             allowed_token_ids = list(current_node.children.keys())
-            
+
             if not allowed_token_ids:
                 raise ValueError("No Valide token available in trie")
-            
+
             full_input = input_ids + generate_tokens
             logit = self.model.get_logits_from_input_ids(full_input)
 
@@ -103,14 +104,14 @@ class ConstrainedDecoder():
             for token_id in range(len(masked_logit)):
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
-                
+
             chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
 
             if masked_logit[chosen_max] == float('-inf'):
                 chosen_token = allowed_token_ids[0]
             else:
                 chosen_token = chosen_max
-            
+
             generate_tokens.append(chosen_token)
             current_node = current_node.children[chosen_token]
 
@@ -156,7 +157,7 @@ class ConstrainedDecoder():
                 return False
             return bool(re.fullmatch(r'^-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?', s))
 
-        for step in range(max_step):
+        for _ in range(max_step):
             full_input = input_ids + generated_tokens
             logit = self.model.get_logits_from_input_ids(full_input)
 
@@ -200,7 +201,7 @@ class ConstrainedDecoder():
                 return new_tokens
 
         return generated_tokens
-    
+
     def _correct_number_from_source(self, generated: str, source_text: str) -> str:
         """
         Ila l-value li generated model qariba (nafs digits) m3a number f source,
@@ -251,7 +252,7 @@ class ConstrainedDecoder():
                     return False
                 i += 1
             return True
-        
+
         # Use pre-encoded quote token
         quote_token = self.fixed_tokens['"']
         generated_tokens.extend(quote_token)
@@ -263,7 +264,7 @@ class ConstrainedDecoder():
 
             masked_logit = logit.copy()
 
-            #iterate over pre-computed vocab items
+            # iterate over pre-computed vocab items
             for token_id, token_str in self.vocab_items:
                 if token_str is None:
                     masked_logit[token_id] = float('-inf')
@@ -271,7 +272,7 @@ class ConstrainedDecoder():
                 new_prefix = prefix + token_str
                 if not is_valid_string_prefix(new_prefix, token_str):
                     masked_logit[token_id] = float('-inf')
-                    
+
             chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
             chosen_str = self.vocab.get(chosen_max, "")
 
@@ -313,6 +314,7 @@ class ConstrainedDecoder():
         else:
             raise ValueError(f"Invalid parameter type: {ParameterType}")
 
+
 def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) -> str:
     """Build an instruction prompt that gives the model context about available functions."""
     func_lines = []
@@ -320,17 +322,17 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         params = ", ".join(f"{k}: {v.type}" for k, v in fn.parameters.items())
         func_lines.append(f"- {fn.name}({params}): {fn.description}")
 
-    return ( 
+    return (
         "You are a function-calling assistant.\n"
         "Your task is to analyze the user request and call exactly one function with the correct parameters.\n"
         "Output ONLY valid JSON. Do not explain, do not add fields, do not invent values.\n\n"
-        
+
         "OUTPUT FORMAT (strict):\n"
         "{\n"
         '  "name": "<function_name>",\n'
         '  "parameters": { <key>: <value>, ... }\n'
         "}\n\n"
-        
+
         "PARAMETER EXTRACTION RULES:\n"
         "- String parameters: extract text as-is, do NOT include surrounding quotes in the value\n"
         "- Number parameters: copy exactly as written, preserve all digits and decimal points\n"
@@ -346,7 +348,7 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         '  "name": "some_function",\n'
         '  "parameters": {"x": -5}\n'
         "}\n\n"
-        
+
         "EXTRACTION EXAMPLES:\n"
         "User: Call function with parameter text = 'hello world'\n"
         "Output:\n"
@@ -354,21 +356,21 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         '  "name": "some_function",\n'
         '  "parameters": {"text": "hello world"}\n'
         "}\n\n"
-        
+
         "User: Call function with parameters a = 42 and b = 3.14\n"
         "Output:\n"
         "{\n"
         '  "name": "some_function",\n'
         '  "parameters": {"a": 42, "b": 3.14}\n'
         "}\n\n"
-        
+
         "User: Call function with parameter name = ''\n"
         "Output:\n"
         "{\n"
         '  "name": "some_function",\n'
         '  "parameters": {"name": ""}\n'
         "}\n\n"
-        
+
         "CRITICAL RULES:\n"
         "1. Output ONLY the JSON object, nothing else\n"
         "2. Do not output explanations, reasoning, or commentary\n"
@@ -376,7 +378,7 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         "4. Number parameters are NOT quoted\n"
         "5. Always match the exact function name and parameter names from available functions\n"
         "6. If required information is missing, do not invent it\n\n"
-        
+
         "Available functions:\n"
         + "\n".join(func_lines)
         + "\n\n"

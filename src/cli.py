@@ -7,7 +7,7 @@ def get_argument() -> dict:
     """Create the CLI argument parser"""
     arguments: dict[str, str] = {
         "--functions_definition": "data/input/functions_definition.json",
-        "--input" : "data/input/function_calling_tests.json",
+        "--input": "data/input/function_calling_tests.json",
         "--output": "data/output/function_calling_results.json"
     }
 
@@ -31,8 +31,6 @@ def get_argument() -> dict:
         i += 2
 
     return arguments
-        
-    
 
 
 def main() -> int:

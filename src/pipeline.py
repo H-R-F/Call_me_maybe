@@ -22,7 +22,6 @@ def run_pipeline(
     decoder = ConstrainedDecoder(model, functions)
     outputs: list[OutputItem] = []
 
-
     for item in prompts:
         decoded = decode(
             model=model,

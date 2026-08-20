@@ -2,9 +2,7 @@
 
 import json
 from pathlib import Path
-from typing import Any, Iterable, TypeVar, cast
-
-from pydantic import BaseModel
+from typing import Any, Iterable
 
 from .schema import FunctionDefinition, OutputItem, PromptItem
 
