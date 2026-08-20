@@ -14,7 +14,7 @@ class TrieNode:
             if token_id not in node.children:
                 node.children[token_id] = TrieNode()
             node = node.children[token_id]
-        node.terminal = True
+        node.terminal = True 
 
 class ConstrainedDecoder():
     def __init__(self, model: Small_LLM_Model, function: list[FunctionDefinition]):
@@ -47,6 +47,7 @@ class ConstrainedDecoder():
         self.fixed_tokens: dict[str, list[int]] = {}  # Changed to list for multi-token
         for text in ["{", '"name"', '"parameters"', ":", ",", "}", '"']:
             self.fixed_tokens[text] = self.model.encode(text).tolist()[0]
+
 
     def generate_function_name(self, input_ids: list[int]) -> list[int]:
         current_node = self.func_trie
@@ -117,10 +118,15 @@ class ConstrainedDecoder():
                 break
         return generate_tokens
 
-    def generate_number(self, input_ids: list[int]) -> list[int]:
+    def generate_number(self, input_ids: list[int], source_text: str = "") -> list[int]:
         generated_tokens: list[int] = []
         prefix = ""
         max_step = 20
+
+        def clean_token(s: str | None) -> str:
+            if s is None:
+                return ""
+            return s.lstrip('Ġ')
 
         def is_valid_number_prefix(s: str):
             if not s:
@@ -142,15 +148,15 @@ class ConstrainedDecoder():
                 if len(parts) == 2 and not parts[1].isdigit():
                     return False
             return True
-        
+
         def is_complete_number(s: str):
             if not s:
                 return False
             if not s[-1].isdigit():
                 return False
             return bool(re.fullmatch(r'^-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?', s))
-        
-        for _ in range(max_step):
+
+        for step in range(max_step):
             full_input = input_ids + generated_tokens
             logit = self.model.get_logits_from_input_ids(full_input)
 
@@ -160,27 +166,58 @@ class ConstrainedDecoder():
             if is_complete_number(prefix):
                 would_extend = (
                     unconstrainde_choice_str is not None
-                    and is_valid_number_prefix(prefix + unconstrainde_choice_str)
+                    and is_valid_number_prefix(prefix + clean_token(unconstrainde_choice_str))
                 )
                 if not would_extend:
                     break
 
             masked_logit = logit.copy()
-            #iterate over pre-computed vocab items
             for token_id, token_str in self.vocab_items:
                 if token_str is None:
                     masked_logit[token_id] = float('-inf')
                     continue
-                new_prefix = prefix + token_str
+
+                if prefix and token_str.startswith('Ġ'):
+                    masked_logit[token_id] = float('-inf')
+                    continue
+
+                c = clean_token(token_str)
+                new_prefix = prefix + c
                 if not is_valid_number_prefix(new_prefix):
                     masked_logit[token_id] = float('-inf')
-                
+
             chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
 
             generated_tokens.append(chosen_max)
-            prefix += self.vocab.get(chosen_max, "")
+            prefix += clean_token(self.vocab.get(chosen_max, ""))
+
+        if source_text:
+            generated_value = prefix
+            corrected = self._correct_number_from_source(generated_value, source_text)
+            if corrected != generated_value:
+                # re-encode l-corrected value w regenerate tokens
+                new_tokens = self.model.encode(corrected).tolist()[0]
+                return new_tokens
 
         return generated_tokens
+    
+    def _correct_number_from_source(self, generated: str, source_text: str) -> str:
+        """
+        Ila l-value li generated model qariba (nafs digits) m3a number f source,
+        walakin naqsa negative sign, sе7е7ha.
+        """
+        if not generated:
+            return generated
+
+        # jib gemi3 numbers li kaynin f source (b sign dyalhom)
+        source_numbers = re.findall(r'-?\d+\.?\d*', source_text)
+
+        for num in source_numbers:
+            # ila l-magnitude (bla sign) kif kif, w source 3ando "-" wla model nassah
+            if num.lstrip('-') == generated.lstrip('-') and num != generated:
+                return num
+
+        return generated
 
     def generate_string(self, input_ids: list[int]) -> list[int]:
         generated_tokens: list[int] = []
@@ -264,18 +301,17 @@ class ConstrainedDecoder():
 
         return generated_tokens
 
-    def generate_parameter_value(self, input_ids: list[int], ParameterType: str) -> list[int]:
+    def generate_parameter_value(self, input_ids: list[int], ParameterType: str, source_text: str = "") -> list[int]:
         if ParameterType == "string":
             return self.generate_string(input_ids)
         elif ParameterType == "number":
-            return self.generate_number(input_ids)
+            return self.generate_number(input_ids, source_text=source_text)
         elif ParameterType == "integer":
-            return self.generate_number(input_ids)
+            return self.generate_number(input_ids, source_text=source_text)
         elif ParameterType == "boolean":
             return self.generate_boolean(input_ids)
         else:
             raise ValueError(f"Invalid parameter type: {ParameterType}")
-
 
 def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) -> str:
     """Build an instruction prompt that gives the model context about available functions."""
@@ -298,10 +334,18 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         "PARAMETER EXTRACTION RULES:\n"
         "- String parameters: extract text as-is, do NOT include surrounding quotes in the value\n"
         "- Number parameters: copy exactly as written, preserve all digits and decimal points\n"
+        "- Negative numbers MUST include the leading '-' character, do not drop it\n"
         "- Empty values: output empty string \"\" or 0 depending on parameter type\n"
         "- Only use information explicitly stated in the user request\n"
         "- Never invent, guess, or assume parameter values\n"
         "- Match parameter names exactly as defined in the function signature\n\n"
+
+        "User: Call function with parameter x = -5\n"
+        "Output:\n"
+        "{\n"
+        '  "name": "some_function",\n'
+        '  "parameters": {"x": -5}\n'
+        "}\n\n"
         
         "EXTRACTION EXAMPLES:\n"
         "User: Call function with parameter text = 'hello world'\n"
@@ -381,7 +425,7 @@ def decode(
     params: list[str] = list(function.parameters.keys())
     for idx, (param_name, param_spec) in enumerate(function.parameters.items()):
         force(f'"{param_name}": ')
-        value_tokens = decoder.generate_parameter_value(input_ids, param_spec.type)
+        value_tokens = decoder.generate_parameter_value(input_ids, param_spec.type, source_text=prompt)
         output_tokens.extend(value_tokens)
         input_ids.extend(value_tokens)
         if idx < len(params) - 1:
