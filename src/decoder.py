@@ -19,9 +19,13 @@ class TrieNode:
 
 
 class ConstrainedDecoder():
-    def __init__(self, model: Small_LLM_Model, function: list[FunctionDefinition]):
+    def __init__(
+        self, model: Small_LLM_Model, function: list[FunctionDefinition]
+    ):
         self.model = model
-        self.functions_by_name: dict[str, FunctionDefinition] = {fn.name: fn for fn in function}
+        self.functions_by_name: dict[str, FunctionDefinition] = {
+            fn.name: fn for fn in function
+        }
 
         # Load vocabulary
         vocab_path = self.model.get_path_to_vocab_file()
@@ -46,7 +50,8 @@ class ConstrainedDecoder():
             self.bool_trie.insert(token_ids)
 
         #  Pre-encode fixed tokens (already doing this!)
-        self.fixed_tokens: dict[str, list[int]] = {}  # Changed to list for multi-token
+        # Changed to list for multi-token
+        self.fixed_tokens: dict[str, list[int]] = {}
         for text in ["{", '"name"', '"parameters"', ":", ",", "}", '"']:
             self.fixed_tokens[text] = self.model.encode(text).tolist()[0]
 
@@ -70,7 +75,10 @@ class ConstrainedDecoder():
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
 
-            chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
+            chosen_max = max(
+                range(len(masked_logit)),
+                key=lambda k: masked_logit[k],
+            )
 
             if masked_logit[chosen_max] == float('-inf'):
                 chosen_token = allowed_token_ids[0]
@@ -105,7 +113,10 @@ class ConstrainedDecoder():
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
 
-            chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
+            chosen_max = max(
+                range(len(masked_logit)),
+                key=lambda k: masked_logit[k],
+            )
 
             if masked_logit[chosen_max] == float('-inf'):
                 chosen_token = allowed_token_ids[0]
@@ -119,7 +130,11 @@ class ConstrainedDecoder():
                 break
         return generate_tokens
 
-    def generate_number(self, input_ids: list[int], source_text: str = "") -> list[int]:
+    def generate_number(
+        self,
+        input_ids: list[int],
+        source_text: str = "",
+    ) -> list[int]:
         generated_tokens: list[int] = []
         prefix = ""
         max_step = 20
@@ -155,19 +170,27 @@ class ConstrainedDecoder():
                 return False
             if not s[-1].isdigit():
                 return False
-            return bool(re.fullmatch(r'^-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?', s))
+            return bool(re.fullmatch(
+                r'^-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?', s
+            ))
 
         for _ in range(max_step):
             full_input = input_ids + generated_tokens
             logit = self.model.get_logits_from_input_ids(full_input)
 
-            unconstrainde_choice = max(range(len(logit)), key=lambda k: logit[k])
-            unconstrainde_choice_str = self.vocab.get(unconstrainde_choice)
+            unconstrainde_choice = max(
+                range(len(logit)), key=lambda k: logit[k]
+            )
+            unconstrainde_choice_str = self.vocab.get(
+                unconstrainde_choice
+            )
 
             if is_complete_number(prefix):
                 would_extend = (
                     unconstrainde_choice_str is not None
-                    and is_valid_number_prefix(prefix + clean_token(unconstrainde_choice_str))
+                    and is_valid_number_prefix(
+                        prefix + clean_token(unconstrainde_choice_str)
+                    )
                 )
                 if not would_extend:
                     break
@@ -187,14 +210,19 @@ class ConstrainedDecoder():
                 if not is_valid_number_prefix(new_prefix):
                     masked_logit[token_id] = float('-inf')
 
-            chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
+            chosen_max = max(
+                range(len(masked_logit)),
+                key=lambda k: masked_logit[k],
+            )
 
             generated_tokens.append(chosen_max)
             prefix += clean_token(self.vocab.get(chosen_max, ""))
 
         if source_text:
             generated_value = prefix
-            corrected = self._correct_number_from_source(generated_value, source_text)
+            corrected = self._correct_number_from_source(
+                generated_value, source_text
+            )
             if corrected != generated_value:
                 # re-encode l-corrected value w regenerate tokens
                 new_tokens = self.model.encode(corrected).tolist()[0]
@@ -202,10 +230,13 @@ class ConstrainedDecoder():
 
         return generated_tokens
 
-    def _correct_number_from_source(self, generated: str, source_text: str) -> str:
+    def _correct_number_from_source(
+        self, generated: str, source_text: str
+    ) -> str:
         """
-        Ila l-value li generated model qariba (nafs digits) m3a number f source,
-        walakin naqsa negative sign, sе7е7ha.
+        Ila l-value li generated model qariba (nafs digits)
+        m3a number f source, walakin naqsa negative sign,
+        sе7е7ha.
         """
         if not generated:
             return generated
@@ -214,8 +245,10 @@ class ConstrainedDecoder():
         source_numbers = re.findall(r'-?\d+\.?\d*', source_text)
 
         for num in source_numbers:
-            # ila l-magnitude (bla sign) kif kif, w source 3ando "-" wla model nassah
-            if num.lstrip('-') == generated.lstrip('-') and num != generated:
+            # ila l-magnitude (bla sign) kif kif,
+            # w source 3ando "-" wla model nassah
+            if (num.lstrip('-') == generated.lstrip('-')
+                    and num != generated):
                 return num
 
         return generated
@@ -237,7 +270,8 @@ class ConstrainedDecoder():
                     if i + 1 == len(s):
                         return True
                     next_char = s[i+1]
-                    if ord(next_char) not in [92, 47, 34, 98, 102, 110, 114, 116, 117]:
+                    valid_escapes = [92, 47, 34, 98, 102, 110, 114, 116, 117]
+                    if ord(next_char) not in valid_escapes:
                         return False
                     i += 2
                     continue
@@ -273,7 +307,10 @@ class ConstrainedDecoder():
                 if not is_valid_string_prefix(new_prefix, token_str):
                     masked_logit[token_id] = float('-inf')
 
-            chosen_max = max(range(len(masked_logit)), key=lambda k: masked_logit[k])
+            chosen_max = max(
+                range(len(masked_logit)),
+                key=lambda k: masked_logit[k],
+            )
             chosen_str = self.vocab.get(chosen_max, "")
 
             new_prefix = prefix + chosen_str
@@ -302,7 +339,12 @@ class ConstrainedDecoder():
 
         return generated_tokens
 
-    def generate_parameter_value(self, input_ids: list[int], ParameterType: str, source_text: str = "") -> list[int]:
+    def generate_parameter_value(
+        self,
+        input_ids: list[int],
+        ParameterType: str,
+        source_text: str = "",
+    ) -> list[int]:
         if ParameterType == "string":
             return self.generate_string(input_ids)
         elif ParameterType == "number":
@@ -315,17 +357,23 @@ class ConstrainedDecoder():
             raise ValueError(f"Invalid parameter type: {ParameterType}")
 
 
-def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) -> str:
-    """Build an instruction prompt that gives the model context about available functions."""
+def _build_instruction_prompt(
+    prompt: str, functions: list[FunctionDefinition]
+) -> str:
+    """Build an instruction prompt with context about available functions."""
     func_lines = []
     for fn in functions:
-        params = ", ".join(f"{k}: {v.type}" for k, v in fn.parameters.items())
+        params = ", ".join(
+            f"{k}: {v.type}" for k, v in fn.parameters.items()
+        )
         func_lines.append(f"- {fn.name}({params}): {fn.description}")
 
     return (
         "You are a function-calling assistant.\n"
-        "Your task is to analyze the user request and call exactly one function with the correct parameters.\n"
-        "Output ONLY valid JSON. Do not explain, do not add fields, do not invent values.\n\n"
+        "Your task is to analyze the user request and call exactly "
+        "one function with the correct parameters.\n"
+        "Output ONLY valid JSON. Do not explain, do not add fields, "
+        "do not invent values.\n\n"
 
         "OUTPUT FORMAT (strict):\n"
         "{\n"
@@ -334,13 +382,18 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         "}\n\n"
 
         "PARAMETER EXTRACTION RULES:\n"
-        "- String parameters: extract text as-is, do NOT include surrounding quotes in the value\n"
-        "- Number parameters: copy exactly as written, preserve all digits and decimal points\n"
-        "- Negative numbers MUST include the leading '-' character, do not drop it\n"
-        "- Empty values: output empty string \"\" or 0 depending on parameter type\n"
+        "- String parameters: extract text as-is, do NOT include "
+        "surrounding quotes in the value\n"
+        "- Number parameters: copy exactly as written, preserve all "
+        "digits and decimal points\n"
+        "- Negative numbers MUST include the leading '-' character, "
+        "do not drop it\n"
+        "- Empty values: output empty string \"\" or 0 depending on "
+        "parameter type\n"
         "- Only use information explicitly stated in the user request\n"
         "- Never invent, guess, or assume parameter values\n"
-        "- Match parameter names exactly as defined in the function signature\n\n"
+        "- Match parameter names exactly as defined in the function "
+        "signature\n\n"
 
         "User: Call function with parameter x = -5\n"
         "Output:\n"
@@ -376,7 +429,8 @@ def _build_instruction_prompt(prompt: str, functions: list[FunctionDefinition]) 
         "2. Do not output explanations, reasoning, or commentary\n"
         "3. String parameter values do NOT include their surrounding quotes\n"
         "4. Number parameters are NOT quoted\n"
-        "5. Always match the exact function name and parameter names from available functions\n"
+        "5. Always match the exact function name and parameter names "
+        "from available functions\n"
         "6. If required information is missing, do not invent it\n\n"
 
         "Available functions:\n"
@@ -425,9 +479,13 @@ def decode(
     force("{")
     function = decoder.functions_by_name[function_name]
     params: list[str] = list(function.parameters.keys())
-    for idx, (param_name, param_spec) in enumerate(function.parameters.items()):
+    for idx, (param_name, param_spec) in enumerate(
+        function.parameters.items()
+    ):
         force(f'"{param_name}": ')
-        value_tokens = decoder.generate_parameter_value(input_ids, param_spec.type, source_text=prompt)
+        value_tokens = decoder.generate_parameter_value(
+            input_ids, param_spec.type, source_text=prompt
+        )
         output_tokens.extend(value_tokens)
         input_ids.extend(value_tokens)
         if idx < len(params) - 1:

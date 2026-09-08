@@ -24,7 +24,10 @@ def get_argument() -> dict:
 
         value: str = args[i+1]
         if value.startswith("--"):
-            sys.exit(f"Missing value for argument: '{flag}' (got '{value}' instead)")
+            sys.exit(
+                f"Missing value for argument: '{flag}'"
+                f" (got '{value}' instead)"
+            )
 
         arguments[flag] = value
 

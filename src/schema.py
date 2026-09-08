@@ -42,3 +42,14 @@ class OutputItem(BaseModel):
     prompt: str
     name: str
     parameters: dict[str, Any]
+
+
+UNKNOWN_FUNCTION = FunctionDefinition(
+    name="unknown_function",
+    description=(
+        "Default function when no available function matches "
+        "the user request"
+    ),
+    parameters={},
+    returns=ParameterSpec(type="string"),
+)

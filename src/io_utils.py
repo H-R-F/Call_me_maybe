@@ -31,7 +31,9 @@ def load_function_definitions(path: str) -> list[FunctionDefinition]:
         try:
             functions.append(FunctionDefinition.model_validate(item))
         except ValueError as exc:
-            raise ValueError(f'Invalid data in input file: "{path}": {exc}') from exc
+            raise ValueError(
+                f'Invalid data in input file: "{path}": {exc}'
+            ) from exc
     return functions
 
 
@@ -47,7 +49,9 @@ def load_prompts(path: str) -> list[PromptItem]:
         try:
             prompts.append(PromptItem.model_validate(item))
         except ValueError as exc:
-            raise ValueError(f'Invalid data in input file: "{path}": {exc}') from exc
+            raise ValueError(
+                f'Invalid data in input file: "{path}": {exc}'
+            ) from exc
     return prompts
 
 
