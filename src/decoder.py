@@ -5,11 +5,11 @@ from .schema import FunctionDefinition
 
 
 class TrieNode:
-    def __init__(self):
+    def __init__(self) -> None:
         self.children: dict[int, TrieNode] = {}
         self.terminal: bool = False
 
-    def insert(self, token_ids: list[int]):
+    def insert(self, token_ids: list[int]) -> None:
         node = self
         for token_id in token_ids:
             if token_id not in node.children:
@@ -144,7 +144,7 @@ class ConstrainedDecoder():
                 return ""
             return s.lstrip('Ġ')
 
-        def is_valid_number_prefix(s: str):
+        def is_valid_number_prefix(s: str) -> bool:
             if not s:
                 return True
             if s == '-':
@@ -165,7 +165,7 @@ class ConstrainedDecoder():
                     return False
             return True
 
-        def is_complete_number(s: str):
+        def is_complete_number(s: str) -> bool:
             if not s:
                 return False
             if not s[-1].isdigit():
@@ -382,10 +382,14 @@ def _build_instruction_prompt(
         "}\n\n"
 
         "PARAMETER EXTRACTION RULES:\n"
-        "- String parameters: extract text as-is, do NOT include surrounding quotes in the value\n"
-        "- Number parameters: copy exactly as written, preserve all digits and decimal points\n"
-        "- Negative numbers MUST include the leading '-' character, do not drop it\n"
-        "- Empty values: output empty string \"\" or 0 depending on parameter type\n"
+        "- String parameters: extract text as-is, "
+        "do NOT include surrounding quotes in the value\n"
+        "- Number parameters: copy exactly as written, "
+        "preserve all digits and decimal points\n"
+        "- Negative numbers MUST include the leading '-' character, "
+        "do not drop it\n"
+        "- Empty values: output empty string \"\" or 0 "
+        "depending on parameter type\n"
         "- Only use information explicitly stated in the user request\n"
         "- Never invent, guess, or assume parameter values\n"
         "- Match parameter names exactly as defined in the function "
@@ -453,7 +457,7 @@ def decode(
     input_ids = model.encode(instruction).tolist()[0]
     output_tokens: list[int] = []
 
-    def force(text: str):
+    def force(text: str) -> None:
         # use pre-encoded tokens instead of encoding again
         token = decoder.fixed_tokens.get(text)
         if token is None:
