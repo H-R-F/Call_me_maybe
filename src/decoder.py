@@ -1,5 +1,6 @@
 import re
 import json
+from typing import Any, cast
 from llm_sdk import Small_LLM_Model
 from .schema import FunctionDefinition
 
@@ -226,7 +227,7 @@ class ConstrainedDecoder():
             if corrected != generated_value:
                 # re-encode l-corrected value w regenerate tokens
                 new_tokens = self.model.encode(corrected).tolist()[0]
-                return new_tokens
+                return cast(list[int], new_tokens)
 
         return generated_tokens
 
@@ -242,7 +243,9 @@ class ConstrainedDecoder():
             return generated
 
         # jib gemi3 numbers li kaynin f source (b sign dyalhom)
-        source_numbers = re.findall(r'-?\d+\.?\d*', source_text)
+        source_numbers: list[str] = re.findall(
+            r'-?\d+\.?\d*', source_text
+        )
 
         for num in source_numbers:
             # ila l-magnitude (bla sign) kif kif,
@@ -496,4 +499,4 @@ def decode(
     force("}")
     output_str = model.decode(output_tokens)
     print("Output:", output_str)
-    return json.loads(output_str)
+    return cast(dict[str, Any], json.loads(output_str))
