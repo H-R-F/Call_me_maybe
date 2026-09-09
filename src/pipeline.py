@@ -6,7 +6,7 @@ from llm_sdk import Small_LLM_Model
 
 from .decoder import ConstrainedDecoder, decode
 from .io_utils import load_function_definitions, load_prompts, write_output
-from .schema import UNKNOWN_FUNCTION, OutputItem
+from .schema import UNKNOWN_FUNCTION, OutputItem, validate_function_parameters
 
 
 def run_pipeline(
@@ -30,11 +30,18 @@ def run_pipeline(
             functions=functions,
             decoder=decoder,
         )
+        selected_function = next(
+            function for function in functions
+            if function.name == decoded["name"]
+        )
+        parameters = validate_function_parameters(
+            selected_function, decoded["parameters"]
+        )
         outputs.append(
             OutputItem(
                 prompt=item.prompt,
                 name=decoded["name"],
-                parameters=decoded["parameters"],
+                parameters=parameters,
             )
         )
 
