@@ -135,6 +135,7 @@ class ConstrainedDecoder():
         self,
         input_ids: list[int],
         source_text: str = "",
+        is_float: bool = False,
     ) -> list[int]:
         generated_tokens: list[int] = []
         prefix = ""
@@ -219,15 +220,16 @@ class ConstrainedDecoder():
             generated_tokens.append(chosen_max)
             prefix += clean_token(self.vocab.get(chosen_max, ""))
 
+        final_value = prefix
         if source_text:
-            generated_value = prefix
-            corrected = self._correct_number_from_source(
-                generated_value, source_text
-            )
-            if corrected != generated_value:
-                # re-encode l-corrected value w regenerate tokens
-                new_tokens = self.model.encode(corrected).tolist()[0]
-                return cast(list[int], new_tokens)
+            final_value = self._correct_number_from_source(
+                final_value, source_text)
+
+        if is_float and final_value and not re.search(r'[.eE]', final_value):
+            final_value = final_value + ".0"
+
+        if final_value != prefix:
+            return cast(list[int], self.model.encode(final_value).tolist()[0])
 
         return generated_tokens
 
@@ -340,6 +342,18 @@ class ConstrainedDecoder():
                 generated_tokens.append(chosen_max)
                 prefix += chosen_str
 
+        generated_str = self.model.decode(generated_tokens)
+        if (
+            len(generated_str) >= 2
+            and generated_str[0] == '"'
+            and generated_str[-1] == '"'
+        ):
+            inner = generated_str[1:-1]
+            if inner.startswith(' '):
+                corrected_full = '"' + inner.lstrip(' ') + '"'
+                new_tokens = self.model.encode(corrected_full).tolist()[0]
+                return cast(list[int], new_tokens)
+
         return generated_tokens
 
     def generate_parameter_value(
@@ -351,9 +365,11 @@ class ConstrainedDecoder():
         if ParameterType == "string":
             return self.generate_string(input_ids)
         elif ParameterType == "number":
-            return self.generate_number(input_ids, source_text=source_text)
+            return self.generate_number(
+                input_ids, source_text=source_text, is_float=True)
         elif ParameterType == "integer":
-            return self.generate_number(input_ids, source_text=source_text)
+            return self.generate_number(
+                input_ids, source_text=source_text, is_float=False)
         elif ParameterType == "boolean":
             return self.generate_boolean(input_ids)
         else:
@@ -480,14 +496,14 @@ def decode(
     force('"')
     force(", ")
     force('"parameters"')
-    force(": ")
+    force(":")
     force("{")
     function = decoder.functions_by_name[function_name]
     params: list[str] = list(function.parameters.keys())
     for idx, (param_name, param_spec) in enumerate(
         function.parameters.items()
     ):
-        force(f'"{param_name}": ')
+        force(f'"{param_name}":')
         value_tokens = decoder.generate_parameter_value(
             input_ids, param_spec.type, source_text=prompt
         )
