@@ -45,7 +45,6 @@ def main() -> int:
             input_path=args["--input"],
             output_path=args["--output"],
         )
-        pass
     except Exception as exc:
         sys.stderr.write(f"Error: {exc}\n")
         return 1

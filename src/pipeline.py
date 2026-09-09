@@ -9,30 +9,6 @@ from .io_utils import load_function_definitions, load_prompts, write_output
 from .schema import UNKNOWN_FUNCTION, OutputItem
 
 
-def _function_matches_prompt(
-    prompt: str, functions: list
-) -> str | None:
-    """Check if prompt keywords match any function description.
-
-    Returns the function name if a match is found, None otherwise.
-    """
-    prompt_lower = prompt.lower()
-    best_match = None
-    best_score = 0
-
-    for fn in functions:
-        if fn.name == UNKNOWN_FUNCTION.name:
-            continue
-        desc_words = set(fn.description.lower().split())
-        prompt_words = set(prompt_lower.split())
-        overlap = len(desc_words & prompt_words)
-        if overlap > best_score:
-            best_score = overlap
-            best_match = fn.name
-
-    return best_match if best_score > 0 else None
-
-
 def run_pipeline(
     *,
     functions_definition_path: str,
@@ -48,17 +24,6 @@ def run_pipeline(
     outputs: list[OutputItem] = []
 
     for item in prompts:
-        matched = _function_matches_prompt(item.prompt, functions)
-        if matched is None:
-            outputs.append(
-                OutputItem(
-                    prompt=item.prompt,
-                    name=UNKNOWN_FUNCTION.name,
-                    parameters={},
-                )
-            )
-            continue
-
         decoded = decode(
             model=model,
             prompt=item.prompt,

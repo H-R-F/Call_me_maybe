@@ -382,14 +382,10 @@ def _build_instruction_prompt(
         "}\n\n"
 
         "PARAMETER EXTRACTION RULES:\n"
-        "- String parameters: extract text as-is, do NOT include "
-        "surrounding quotes in the value\n"
-        "- Number parameters: copy exactly as written, preserve all "
-        "digits and decimal points\n"
-        "- Negative numbers MUST include the leading '-' character, "
-        "do not drop it\n"
-        "- Empty values: output empty string \"\" or 0 depending on "
-        "parameter type\n"
+        "- String parameters: extract text as-is, do NOT include surrounding quotes in the value\n"
+        "- Number parameters: copy exactly as written, preserve all digits and decimal points\n"
+        "- Negative numbers MUST include the leading '-' character, do not drop it\n"
+        "- Empty values: output empty string \"\" or 0 depending on parameter type\n"
         "- Only use information explicitly stated in the user request\n"
         "- Never invent, guess, or assume parameter values\n"
         "- Match parameter names exactly as defined in the function "
@@ -431,7 +427,9 @@ def _build_instruction_prompt(
         "4. Number parameters are NOT quoted\n"
         "5. Always match the exact function name and parameter names "
         "from available functions\n"
-        "6. If required information is missing, do not invent it\n\n"
+        "6. If no available function matches the user request, choose "
+        '"unknown_function" and use an empty parameters object\n'
+        "7. If required information is missing, do not invent it\n\n"
 
         "Available functions:\n"
         + "\n".join(func_lines)
@@ -469,9 +467,9 @@ def decode(
     force('"')
 
     name_tokens = decoder.generate_function_name(input_ids)
+    function_name = model.decode(name_tokens)
     output_tokens.extend(name_tokens)
     input_ids.extend(name_tokens)
-    function_name = model.decode(name_tokens)
     force('"')
     force(", ")
     force('"parameters"')
