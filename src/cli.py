@@ -1,4 +1,3 @@
-"""Command-line interface."""
 import sys
 from .pipeline import run_pipeline
 

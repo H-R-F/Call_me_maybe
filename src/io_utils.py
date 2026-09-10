@@ -1,5 +1,3 @@
-"""I/O helpers for JSON files."""
-
 import json
 from pathlib import Path
 from typing import Any, Iterable

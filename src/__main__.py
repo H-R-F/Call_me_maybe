@@ -1,7 +1,8 @@
-"""Module entry point"""
-
-from .cli import main
-
+import sys
 
 if __name__ == "__main__":
-    main()
+    try:
+        from .cli import main
+        main()
+    except KeyboardInterrupt:
+        sys.exit("Process interrupted by user\n")

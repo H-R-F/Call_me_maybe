@@ -1,12 +1,10 @@
-"""Generation pipeline"""
-
 from typing import Any
 
 from llm_sdk import Small_LLM_Model
 
 from .decoder import ConstrainedDecoder, decode
 from .io_utils import load_function_definitions, load_prompts, write_output
-from .schema import UNKNOWN_FUNCTION, OutputItem, validate_function_parameters
+from .schema import UNKNOWN_FUNCTION, OutputItem
 
 
 def run_pipeline(
@@ -14,7 +12,7 @@ def run_pipeline(
     functions_definition_path: str,
     input_path: str,
     output_path: str,
-) -> list[dict[str, Any]]:
+) -> None:
     """Run the end-to-end generation pipeline"""
     functions = load_function_definitions(functions_definition_path)
     functions.append(UNKNOWN_FUNCTION)
@@ -30,20 +28,12 @@ def run_pipeline(
             functions=functions,
             decoder=decoder,
         )
-        selected_function = next(
-            function for function in functions
-            if function.name == decoded["name"]
-        )
-        parameters = validate_function_parameters(
-            selected_function, decoded["parameters"]
-        )
         outputs.append(
             OutputItem(
                 prompt=item.prompt,
                 name=decoded["name"],
-                parameters=parameters,
+                parameters=decoded["parameters"],
             )
         )
 
     write_output(output_path, outputs)
-    return [item.model_dump() for item in outputs]

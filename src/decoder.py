@@ -50,8 +50,7 @@ class ConstrainedDecoder():
             token_ids = self.model.encode(bool_str).tolist()[0]
             self.bool_trie.insert(token_ids)
 
-        #  Pre-encode fixed tokens (already doing this!)
-        # Changed to list for multi-token
+        #  Pre-encode fixed tokens
         self.fixed_tokens: dict[str, list[int]] = {}
         for text in ["{", '"name"', '"parameters"', ":", ",", "}", '"']:
             self.fixed_tokens[text] = self.model.encode(text).tolist()[0]
@@ -71,7 +70,6 @@ class ConstrainedDecoder():
             logit = self.model.get_logits_from_input_ids(full_input)
 
             masked_logit = logit.copy()
-            # only check allowed tokens
             for token_id in range(len(masked_logit)):
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
@@ -109,7 +107,6 @@ class ConstrainedDecoder():
             logit = self.model.get_logits_from_input_ids(full_input)
 
             masked_logit = logit.copy()
-            # only check allowed tokens
             for token_id in range(len(masked_logit)):
                 if token_id not in allowed_token_ids:
                     masked_logit[token_id] = float('-inf')
@@ -222,7 +219,7 @@ class ConstrainedDecoder():
 
         final_value = prefix
         if source_text:
-            final_value = self._correct_number_from_source(
+            final_value = self.correct_number_from_source(
                 final_value, source_text)
 
         if is_float and final_value and not re.search(r'[.eE]', final_value):
@@ -233,25 +230,20 @@ class ConstrainedDecoder():
 
         return generated_tokens
 
-    def _correct_number_from_source(
+    def correct_number_from_source(
         self, generated: str, source_text: str
     ) -> str:
-        """
-        Ila l-value li generated model qariba (nafs digits)
-        m3a number f source, walakin naqsa negative sign,
-        sе7е7ha.
-        """
         if not generated:
             return generated
 
-        # jib gemi3 numbers li kaynin f source (b sign dyalhom)
         source_numbers: list[str] = re.findall(
             r'-?\d+\.?\d*', source_text
         )
 
+        if generated in source_numbers:
+            return generated
+
         for num in source_numbers:
-            # ila l-magnitude (bla sign) kif kif,
-            # w source 3ando "-" wla model nassah
             if (num.lstrip('-') == generated.lstrip('-')
                     and num != generated):
                 return num
@@ -261,7 +253,7 @@ class ConstrainedDecoder():
     def generate_string(self, input_ids: list[int]) -> list[int]:
         generated_tokens: list[int] = []
         prefix = ""
-        max_step = 50
+        max_step = 200
 
         def is_valid_string_prefix(s: str, token_str: str) -> bool:
             if not s:
@@ -292,7 +284,6 @@ class ConstrainedDecoder():
                 i += 1
             return True
 
-        # Use pre-encoded quote token
         quote_token = self.fixed_tokens['"']
         generated_tokens.extend(quote_token)
         prefix += '"'
@@ -303,7 +294,6 @@ class ConstrainedDecoder():
 
             masked_logit = logit.copy()
 
-            # iterate over pre-computed vocab items
             for token_id, token_str in self.vocab_items:
                 if token_str is None:
                     masked_logit[token_id] = float('-inf')
@@ -376,7 +366,7 @@ class ConstrainedDecoder():
             raise ValueError(f"Invalid parameter type: {ParameterType}")
 
 
-def _build_instruction_prompt(
+def build_instruction_prompt(
     prompt: str, functions: list[FunctionDefinition]
 ) -> str:
     """Build an instruction prompt with context about available functions."""
@@ -472,12 +462,11 @@ def decode(
     if decoder is None:
         decoder = ConstrainedDecoder(model, functions)
 
-    instruction = _build_instruction_prompt(prompt, functions)
+    instruction = build_instruction_prompt(prompt, functions)
     input_ids = model.encode(instruction).tolist()[0]
     output_tokens: list[int] = []
 
     def force(text: str) -> None:
-        # use pre-encoded tokens instead of encoding again
         token = decoder.fixed_tokens.get(text)
         if token is None:
             token = model.encode(text).tolist()[0]
@@ -514,5 +503,4 @@ def decode(
     force("}")
     force("}")
     output_str = model.decode(output_tokens)
-    print("Output:", output_str)
     return cast(dict[str, Any], json.loads(output_str))
